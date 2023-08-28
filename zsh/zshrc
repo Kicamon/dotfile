@@ -140,6 +140,7 @@ alias sudo='sudo -E'
 alias qgit='zsh ~/.config/zsh/qgit.sh'
 alias pwd='pwd | xclip -sel c && pwd'
 alias algorithm='typora ~/Documents/Algorithm/README.md'
+alias cfc='zsh ~/.config/zsh/cfc.zsh'
 
 # my set
 #source ~/.config/zsh/fzf.zsh

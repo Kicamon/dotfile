@@ -5,4 +5,5 @@ else
 	time=$(date "+%Y/%m/%d,%H:%M")
 	git commit -m ${time}
 fi
+wait
 git push
