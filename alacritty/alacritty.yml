@@ -52,7 +52,7 @@ font:
     family:  FiraCode Nerd Font
     style: Bold Italic
 
-  size: 16
+  size: 14
 key_bindings:
   - { key: N, mods: Control|Shift, action: CreateNewWindow }
 

@@ -17,10 +17,10 @@ set $mod Mod4
 font pango:monospace 8
 
 # 副屏
-#set $monirot1 HDMI-0
-#set $monirot2 DP-4
-set $monirot1 DP-4
+set $monirot1 HDMI-0
 set $monirot2 DP-4
+# set $monirot1 DP-4
+# set $monirot2 DP-4
 #exec_always exec xrandr --output HDMI-0 --primary --auto --above DP-4
 exec_always exec xrandr --output $monirot1 --primary --auto --right-of $monirot2
 #exec_always exec xrandr --output HDMI-0 --auto --above DP-4 --primary
