@@ -144,4 +144,4 @@ alias cfc='zsh ~/.config/zsh/cfc.zsh'
 
 # my set
 #source ~/.config/zsh/fzf.zsh
-source ~/.config/zsh/welcome.sh
+# source ~/.config/zsh/welcome.sh
