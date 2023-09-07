@@ -21,8 +21,8 @@ set $monirot1 HDMI-0
 set $monirot2 DP-4
 # set $monirot1 DP-4
 # set $monirot2 DP-4
-#exec_always exec xrandr --output HDMI-0 --primary --auto --above DP-4
-exec_always exec xrandr --output $monirot1 --primary --auto --right-of $monirot2
+# exec_always exec xrandr --output HDMI-0 --primary --auto --above DP-4
+exec_always exec xrandr --output $monirot1 --primary --auto --above $monirot2
 #exec_always exec xrandr --output HDMI-0 --auto --above DP-4 --primary
 # 投影
 #xrandr --output "输出口" --auto --same-al DP-4 --auto
@@ -210,17 +210,6 @@ workspace 8  output $monirot2
 workspace 9  output $monirot2
 workspace 10 output $monirot2
 
-
-#workspace 1 output DP-4
-#workspace 2 output DP-4
-#workspace 3 output DP-4
-#workspace 4 output DP-4
-#workspace 5 output DP-4
-#workspace 6 output DP-4
-#workspace 7 output DP-4
-#workspace 8 output DP-4
-#workspace 9 output DP-4
-#workspace 10 output DP-4
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
