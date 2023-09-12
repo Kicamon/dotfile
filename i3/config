@@ -31,7 +31,7 @@ exec_always exec xrandr --output $monirot1 --primary --auto --above $monirot2
 exec_always picom
 exec_always xbacklight -set 100
 exec_always ~/.config/polybar/launch.sh
-exec_always ~/.config/wallpaper/wallpaper.sh 0
+exec_always ~/.config/wallpaper/Rchange.sh
 exec_always sleep 1; nutstore
 exec_always sleep 1; fcitx5
 exec_always sleep 1.5; xmodmap ~/.xmodmap
@@ -49,7 +49,7 @@ bindsym Mod1+c exec ~/.config/MyTools/EnglishLeaning/AddWord.py
 bindsym Mod1+Left exec ~/.config/wallpaper/wallpaper.sh 1
 bindsym Mod1+Right exec ~/.config/wallpaper/wallpaper.sh 2
 bindsym Mod1+Up exec killall ~/.config/wallpaper/Rchange.sh
-bindsym Mod1+Down exec ~/.config/wallpaper/Rchange.sh
+bindsym Mod1+Down exec killall ~/.config/wallpaper/Rchange.sh ; exec ~/.config/wallpaper/Rchange.sh
 bindsym Shift+Left exec mpc prev
 bindsym Shift+Right exec mpc next
 bindsym $mod+l exec --no-startup-id ~/.config/i3/lock.sh
@@ -253,7 +253,9 @@ bindsym $mod+r mode "resize"
 #}
 
 #new_window none
-default_border pixel 0
+default_border          pixel 3
+default_floating_border pixel 1
+hide_edge_borders both
 gaps inner 10
 
 # float window size
@@ -261,12 +263,21 @@ floating_minimum_size -1 x -1
 #floating_maximum_size 1169 x 754
 
 # color
-client.focused           $pink     $base $text  $rosewater $pink
-client.focused_inactive  $mauve    $base $text  $rosewater $mauve
-client.unfocused         $mauve    $base $text  $rosewater $mauve
-client.urgent            $peach    $base $peach $overlay0  $peach
-client.placeholder       $overlay0 $base $text  $overlay0  $overlay0
-client.background        $base
+# class                 border  backgr. text    indicator child_border
+# client.focused           $pink     $base $text  $rosewater $pink
+# client.focused_inactive  $mauve    $base $text  $rosewater $mauve
+# client.unfocused         $mauve    $base $text  $rosewater $mauve
+# client.urgent            $peach    $base $peach $overlay0  $peach
+# client.placeholder       $overlay0 $base $text  $overlay0  $overlay0
+# client.background        $base
+
+# class                 border  backgr. text    indicator child_border
+client.focused          #81a1c1 #81a1c1 #F8F8F2 #81a1c1   #81a1c1
+client.focused_inactive #2E3440 #2E3440 #F8F8F2 #2E3440   #2E3440
+client.unfocused        #2E3440 #2E3440 #BFBFBF #2E3440   #2E3440
+client.urgent           #2E3440 #FF5555 #F8F8F2 #FF5555   #FF5555
+client.placeholder      #2E3440 #2E3440 #F8F8F2 #2E3440   #2E3440
+client.background       #F8F8F2
 
 # auto plase
 assign [class="^qq$"]7
