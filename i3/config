@@ -46,9 +46,10 @@ bindsym $mod+minus scratchpad show
 bindsym $mod+Shift+s sticky toggle
 bindsym $mod+x exec xmodmap ~/.xmodmap
 bindsym Mod1+c exec ~/.config/MyTools/EnglishLeaning/AddWord.py
-bindsym Mod1+Up exec ~/.config/wallpaper/wallpaper.sh 0
 bindsym Mod1+Left exec ~/.config/wallpaper/wallpaper.sh 1
 bindsym Mod1+Right exec ~/.config/wallpaper/wallpaper.sh 2
+bindsym Mod1+Up exec killall ~/.config/wallpaper/Rchange.sh
+bindsym Mod1+Down exec ~/.config/wallpaper/Rchange.sh
 bindsym Shift+Left exec mpc prev
 bindsym Shift+Right exec mpc next
 bindsym $mod+l exec --no-startup-id ~/.config/i3/lock.sh
