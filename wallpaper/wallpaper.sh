@@ -8,7 +8,6 @@ index=`head --lines=1 ~/.config/wallpaper/index.txt`
 
 if [ $1 == 0 ]
 then
-	index=0
 	feh --bg-fill ${Path}${files[$index]}
 elif [ $1 == 1 ]
 then

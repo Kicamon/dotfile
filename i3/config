@@ -31,7 +31,7 @@ exec_always exec xrandr --output $monirot1 --primary --auto --above $monirot2
 exec_always picom
 exec_always xbacklight -set 100
 exec_always ~/.config/polybar/launch.sh
-exec_always ~/.config/wallpaper/Rchange.sh
+exec_always ~/.config/wallpaper/wallpaper.sh 0
 exec_always sleep 1; nutstore
 exec_always sleep 1; fcitx5
 exec_always sleep 1.5; xmodmap ~/.xmodmap
@@ -48,8 +48,8 @@ bindsym $mod+x exec xmodmap ~/.xmodmap
 bindsym Mod1+c exec ~/.config/MyTools/EnglishLeaning/AddWord.py
 bindsym Mod1+Left exec ~/.config/wallpaper/wallpaper.sh 1
 bindsym Mod1+Right exec ~/.config/wallpaper/wallpaper.sh 2
-bindsym Mod1+Up exec killall ~/.config/wallpaper/Rchange.sh
-bindsym Mod1+Down exec killall ~/.config/wallpaper/Rchange.sh ; exec ~/.config/wallpaper/Rchange.sh
+bindsym Mod1+Up exec killall Rchange.sh
+bindsym Mod1+Down exec killall Rchange.sh && ~/.config/wallpaper/Rchange.sh
 bindsym Shift+Left exec mpc prev
 bindsym Shift+Right exec mpc next
 bindsym $mod+l exec --no-startup-id ~/.config/i3/lock.sh
@@ -95,8 +95,8 @@ floating_modifier $mod
 tiling_drag modifier titlebar
 
 # start a terminal
-bindsym $mod+Return exec kitty
-bindsym $mod+Shift+Return exec alacritty
+bindsym $mod+Return exec st
+bindsym $mod+Shift+Return exec kitty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -260,7 +260,7 @@ gaps inner 10
 
 # float window size
 floating_minimum_size -1 x -1
-#floating_maximum_size 1169 x 754
+# floating_maximum_size 1169 x 754
 
 # color
 # class                 border  backgr. text    indicator child_border
@@ -285,7 +285,7 @@ assign [class="^discord$"]8
 assign [class="^telegram-destktop$"]9
 
 # windows
-for_window [class="^Alacritty$"] floating enable move position center
+for_window [class="^kitty$"] floating enable move position center
 for_window [class="^obs$"] floating enable move position center
 for_window [class="^lx-music-desktop$"]move position center
 for_window [class="^qq$"]move position center
