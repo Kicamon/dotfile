@@ -95,8 +95,8 @@ floating_modifier $mod
 tiling_drag modifier titlebar
 
 # start a terminal
-bindsym $mod+Return exec st
-bindsym $mod+Shift+Return exec kitty
+bindsym $mod+Return exec kitty
+bindsym $mod+Shift+Return exec alacritty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -260,7 +260,7 @@ gaps inner 10
 
 # float window size
 floating_minimum_size -1 x -1
-# floating_maximum_size 1169 x 754
+#floating_maximum_size 1169 x 754
 
 # color
 # class                 border  backgr. text    indicator child_border
@@ -285,7 +285,7 @@ assign [class="^discord$"]8
 assign [class="^telegram-destktop$"]9
 
 # windows
-for_window [class="^kitty$"] floating enable move position center
+for_window [class="^Alacritty$"] floating enable move position center
 for_window [class="^obs$"] floating enable move position center
 for_window [class="^lx-music-desktop$"]move position center
 for_window [class="^qq$"]move position center

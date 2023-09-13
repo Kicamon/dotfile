@@ -9,6 +9,10 @@ static char *font = "FiraCode Nerd Font:pixelsize=20:antialias=true:autohint=tru
 static char *font2[] = {
     "NotoColorEmoji:size=14:antialias=true:autohint=true",
     "icons-in-terminal:pixelsize=14:antialias=true:autohint=true"};
+/* disable bold, italic and roman fonts globally */
+int disablebold = 0;
+int disableitalic = 0;
+int disableroman = 0;
 static int borderpx = 2;
 
 /*
