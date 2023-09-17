@@ -49,7 +49,7 @@ bindsym Mod1+c exec ~/.config/MyTools/EnglishLeaning/AddWord.py
 bindsym Mod1+Left exec ~/.config/wallpaper/wallpaper.sh 1
 bindsym Mod1+Right exec ~/.config/wallpaper/wallpaper.sh 2
 bindsym Mod1+Up exec killall Rchange.sh
-bindsym Mod1+Down exec killall Rchange.sh && ~/.config/wallpaper/Rchange.sh
+bindsym Mod1+Down exec "killall Rchange.sh; ~/.config/wallpaper/Rchange.sh"
 bindsym Shift+Left exec mpc prev
 bindsym Shift+Right exec mpc next
 bindsym $mod+l exec --no-startup-id ~/.config/i3/lock.sh
@@ -96,7 +96,7 @@ tiling_drag modifier titlebar
 
 # start a terminal
 bindsym $mod+Return exec kitty
-bindsym $mod+Shift+Return exec alacritty
+bindsym $mod+Shift+Return exec st
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -253,8 +253,8 @@ bindsym $mod+r mode "resize"
 #}
 
 #new_window none
-default_border          pixel 3
-default_floating_border pixel 1
+default_border          pixel 0
+default_floating_border pixel 0
 hide_edge_borders both
 gaps inner 10
 
@@ -272,11 +272,11 @@ floating_minimum_size -1 x -1
 # client.background        $base
 
 # class                 border  backgr. text    indicator child_border
-client.focused          #81a1c1 #81a1c1 #F8F8F2 #81a1c1   #81a1c1
-client.focused_inactive #2E3440 #2E3440 #F8F8F2 #2E3440   #2E3440
-client.unfocused        #2E3440 #2E3440 #BFBFBF #2E3440   #2E3440
-client.urgent           #2E3440 #FF5555 #F8F8F2 #FF5555   #FF5555
-client.placeholder      #2E3440 #2E3440 #F8F8F2 #2E3440   #2E3440
+client.focused          #ebdbb2 #ebdbb2 #F8F8F2 #ebdbb2   #ebdbb2
+client.focused_inactive #282828 #282828 #F8F8F2 #282828   #282828
+client.unfocused        #282828 #282828 #BFBFBF #282828   #282828
+client.urgent           #282828 #282828 #F8F8F2 #282828   #282828
+client.placeholder      #282828 #282828 #F8F8F2 #282828   #282828
 client.background       #F8F8F2
 
 # auto plase
@@ -290,3 +290,4 @@ for_window [class="^obs$"] floating enable move position center
 for_window [class="^lx-music-desktop$"]move position center
 for_window [class="^qq$"]move position center
 for_window [class="^CodeForces Contest Helper v2$"]move position center
+for_window [class="wemeetapp"] floating enable
