@@ -96,7 +96,7 @@ tiling_drag modifier titlebar
 
 # start a terminal
 bindsym $mod+Return exec kitty
-bindsym $mod+Shift+Return exec st
+bindsym $mod+Shift+Return exec alacritty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -286,6 +286,7 @@ assign [class="^telegram-destktop$"]9
 
 # windows
 for_window [class="^Alacritty$"] floating enable move position center
+for_window [class="^St$"] floating enable move position center
 for_window [class="^obs$"] floating enable move position center
 for_window [class="^lx-music-desktop$"]move position center
 for_window [class="^qq$"]move position center

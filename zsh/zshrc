@@ -133,6 +133,7 @@ eval "$(starship init zsh)"
 
 # mu alias
 alias vim='nvim -p'
+alias vi='nvim -u ~/.vimrc'
 alias ra=ranger
 alias c=clear
 alias s=neofetch
