@@ -26,6 +26,16 @@ then
     index=0
 	fi
 	feh --bg-fill ${Path}${files[${index}]}
+elif [ $1 == 3 ]
+then
+  RCHANGE=$(ps -ef | grep Rchange.sh | grep -v grep)
+  echo "$RCHANGE"
+  if [ "$RCHANGE" == "" ]
+  then
+    ${Path}Rchange.sh
+  else
+    killall Rchange.sh
+  fi
 fi
 
 echo $index > ~/.config/wallpaper/index.txt
