@@ -5,16 +5,12 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "FiraCode Nerd Font:pixelsize=20:antialias=true:autohint=true";
+static char *font = "JetBrainsMono Nerd Font:pixelsize=20:antialias=true:autohint=true";
 static char *font2[] = {
-    "Sans Serif:size=16:antialias=true:autohint=true",
-    "NotoColorEmoji:size=14:antialias=true:autohint=true",
-    "icons-in-terminal:pixelsize=14:antialias=true:autohint=true"};
-/* disable bold, italic and roman fonts globally */
-int disablebold = 0;
-int disableitalic = 1;
-int disableroman = 0;
-static int borderpx = 0;
+    "思源黑体 CN:size=15:antialias=true:autohint=true",
+    "NotoColorEmoji:size=15:antialias=true:autohint=true",
+    "icons-in-terminal:pixelsize=15:antialias=true:autohint=true"};
+static int borderpx = 2;
 
 /*
  * What program is execed by st depends of these precedence rules:
@@ -124,37 +120,19 @@ char *termname = "st-256color";
 unsigned int tabspaces = 8;
 
 /* bg opacity */
-float alpha = 1;
+float alpha = 1.0;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
     "#282828", /* hard contrast: #1d2021 / soft contrast: #32302f */
     "#cc241d", "#98971a", "#d79921", "#458588", "#b16286", "#689d6a", "#a89984",
     "#928374", "#fb4934", "#b8bb26", "#fabd2f", "#83a598", "#d3869b", "#8ec07c",
-    /* "#000000", */
-    /* "#ff5555", */
-    /* "#50fa7b", */
-    /* "#f1fa8c", */
-    /* "#bd93f9", */
-    /* "#ff79c6", */
-    /* "#8be9fd", */
-    /* "#bbbbbb", */
-    /* "#FFFAFA", */
-    /* "#ff5555", */
-    /* "#50fa7b", */
-    /* "#f1fa8c", */
-    /* "#bd93f9", */
-    /* "#ff79c6", */
-    /* "#8be9fd", */
-    /* "#ffffff", */
-
-    "#ebdbb2", 
-    [255] = 0,
+    "#ebdbb2", [255] = 0,
     /* more colors can be added after 255 to use with DefaultXX */
     "#add8e6", /* 256 -> cursor */
     "#555555", /* 257 -> rev cursor*/
     "#282828", /* 258 -> bg */
-    "#ebdbb2", /* 259 -> fg */
+    "#ffffff", /* 259 -> fg */
 };
 
 /*
@@ -235,7 +213,7 @@ ResourcePref resources[] = {
     {"borderpx", INTEGER, &borderpx},
     {"cwscale", FLOAT, &cwscale},
     {"chscale", FLOAT, &chscale},
-    /* {"alpha", FLOAT, &alpha}, */
+    {"alpha", FLOAT, &alpha},
     {"ximspot_update_interval", INTEGER, &ximspot_update_interval},
 };
 
