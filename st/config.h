@@ -8,8 +8,12 @@
 static char *font = "JetBrainsMono Nerd Font:pixelsize=20:antialias=true:autohint=true";
 static char *font2[] = {
     "思源黑体 CN:size=15:antialias=true:autohint=true",
-    "NotoColorEmoji:size=15:antialias=true:autohint=true",
-    "icons-in-terminal:pixelsize=15:antialias=true:autohint=true"};
+    "NotoColorEmoji:size=14:antialias=true:autohint=true",
+    "icons-in-terminal:pixelsize=14:antialias=true:autohint=true"};
+    /* disable bold, italic and roman fonts globally */
+    int disablebold = 0;
+    int disableitalic = 1;
+    int disableroman = 0;
 static int borderpx = 2;
 
 /*
