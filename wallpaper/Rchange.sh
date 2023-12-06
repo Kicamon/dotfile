@@ -10,5 +10,5 @@ do
   index=`expr ${RANDOM} % ${len}`
 	feh --bg-fill ${Path}${files[$index]}
   echo $index > ~/.config/wallpaper/index.txt
-  sleep 600
+  sleep 300
 done
