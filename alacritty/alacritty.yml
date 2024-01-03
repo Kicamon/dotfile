@@ -53,6 +53,7 @@ font:
     style: Bold Italic
 
   size: 15
+
 key_bindings:
   - { key: N, mods: Control|Shift, action: CreateNewWindow }
 
