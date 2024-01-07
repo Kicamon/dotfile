@@ -132,11 +132,11 @@ unset key
 eval "$(starship init zsh)"
 
 # mu alias
-alias vim='nvim -p'
+alias vim='nvim'
 alias vi='nvim -u ~/.vimrc'
-alias ra=ranger
-alias c=clear
-alias s=neofetch
+alias ra='ranger'
+alias c='clear'
+alias s='neofetch'
 alias sudo='sudo -E'
 alias qgit='zsh ~/.config/zsh/qgit.sh'
 alias pwd='pwd | xclip -sel c && pwd'
