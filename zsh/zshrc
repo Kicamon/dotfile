@@ -132,8 +132,8 @@ unset key
 eval "$(starship init zsh)"
 
 # mu alias
-alias vim='nvim'
-alias vi='nvim -u ~/.vimrc'
+alias vim='/usr/bin/nvim'
+alias vi='/usr/bin/vim'
 alias ra='ranger'
 alias c='clear'
 alias s='neofetch'

@@ -26,7 +26,8 @@ configuration {
     action: "kb-cancel";
   }
 
-  icon-theme: "papirus-icon-theme/Papirus-Dark";
+  /* icon-theme: "papirus-icon-theme/Papirus-Dark"; */
+  icon-theme: "Papirus";
 }
 
 * {
