@@ -134,8 +134,7 @@ eval "$(starship init zsh)"
 # mu alias
 alias vim='/usr/bin/nvim'
 alias vi='/usr/bin/vim'
-# alias ra='ranger'
-alias ra='ranger --choosedir=$HOME/.rangerdir;LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
+alias ra='ranger'
 alias c='clear'
 alias s='neofetch'
 alias sudo='sudo -E'
