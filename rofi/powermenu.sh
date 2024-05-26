@@ -1,2 +1,3 @@
-#!/bin/bash
-rofi -show p -modi p:~/.config/rofi/off.sh -theme ~/.config/rofi/nord.rasi
+#!/usr/bin/env bash
+
+source ~/.config/rofi/powermenu/type-2/powermenu.sh
