@@ -4,15 +4,10 @@
 ## Github : @adi1090x
 #
 ## Rofi   : Power Menu
-#
-## Available Styles
-#
-## style-1   style-2   style-3   style-4   style-5
-## style-6   style-7   style-8   style-9   style-10
 
 # Current Theme
-dir="$HOME/.config/rofi/powermenu/type-2"
-theme='style-2'
+dir="$HOME/.config/rofi/powermenu"
+theme='style'
 
 # CMDs
 uptime="`uptime -p | sed -e 's/up //g'`"
@@ -33,7 +28,7 @@ rofi_cmd() {
     -p "Uptime: $uptime" \
     -mesg "Uptime: $uptime" \
     -theme ${dir}/${theme}.rasi
-}
+  }
 
 # Confirmation CMD
 confirm_cmd() {
@@ -46,7 +41,7 @@ confirm_cmd() {
     -p 'Confirmation' \
     -mesg 'Are you Sure?' \
     -theme ${dir}/${theme}.rasi
-}
+  }
 
 # Ask for confirmation
 confirm_exit() {
@@ -89,23 +84,23 @@ run_cmd() {
 # Actions
 chosen="$(run_rofi)"
 case ${chosen} in
-    $shutdown)
+  $shutdown)
     run_cmd --shutdown
-        ;;
-    $reboot)
+    ;;
+  $reboot)
     run_cmd --reboot
-        ;;
-    $lock)
+    ;;
+  $lock)
     if [[ -x '/usr/bin/betterlockscreen' ]]; then
       betterlockscreen -l
     elif [[ -x '/usr/bin/i3lock' ]]; then
       i3lock
     fi
-        ;;
-    $suspend)
+    ;;
+  $suspend)
     run_cmd --suspend
-        ;;
-    $logout)
+    ;;
+  $logout)
     run_cmd --logout
-        ;;
+    ;;
 esac

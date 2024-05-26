@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-source ~/.config/rofi/launchers/type-1/launcher.sh
+source ~/.config/rofi/launchers/launcher.sh
