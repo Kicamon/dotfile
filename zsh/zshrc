@@ -134,7 +134,7 @@ eval "$(starship init zsh)"
 # mu alias
 alias vim='/usr/bin/nvim'
 alias vi='/usr/bin/vim'
-alias ra='ranger'
+alias ra='yazi'
 alias c='clear'
 alias s='neofetch'
 alias sudo='sudo -E'
