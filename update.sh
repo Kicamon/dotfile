@@ -2,7 +2,9 @@
 
 time=$(date "+%Y/%m/%d,%H:%M")
 
-git add ./alacritty ./dunst ./fcitx5 ./fish ./i3 ./kitty ./mpd/mpd.conf ./ncmpcpp ./picom ./polybar ./rofi ./wallpaper ./zsh ./ranger ./neofetch ./update.sh ./tmux ./starship.toml ./vim ./install.sh
+cp -rf ~/.config/alacritty ~/.config/dunst ~/.config/fcitx5 ~/.config/fish ~/.config/i3 ~/.config/kitty ~/.config/mpd ~/.config/ncmpcpp ~/.config/picom ~/.config/polybar ~/.config/rofi ~/.config/wallpaper ~/.config/zsh ~/.config/ranger ~/.config/neofetch ~/.config/tmux ~/.config/starship.toml ~/.config/vim ~/.config/install.sh
+wait
+git add .
 wait
 git commit -m ${time}
 wait

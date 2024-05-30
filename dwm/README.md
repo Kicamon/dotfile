@@ -1,2 +1,0 @@
-# dwm
-dwn config
