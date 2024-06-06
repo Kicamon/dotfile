@@ -130,6 +130,7 @@ unset key
 # }}} End configuration added by Zim install
 
 eval "$(starship init zsh)"
+[ $(tty) = "/dev/tty1" ] && cd ~ && startx
 
 # mu alias
 alias vim='/usr/bin/nvim'

@@ -56,7 +56,7 @@ rules = [
   { mime = "application/json", use = [ "edit", "reveal" ] },
   { mime = "*/javascript",     use = [ "edit", "reveal" ] },
 
-  { mime = "application/pdf",  use = [ "open", "reveal" ] },
+  { mime = "pdf",  use = [ "open", "reveal" ] },
 
   { mime = "*", use = [ "open", "reveal" ] },
 ]
