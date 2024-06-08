@@ -21,50 +21,50 @@ blur: {
 }
 
 blur-background-exclude = [
-	"window_type = 'dock'",
-	"window_type = 'desktop'",
-	"class_g     = 'kitty'",
-	"class_g     = 'Alacritty'",
-	"class_g     = 'Code'",
-	"class_g     = 'float'",
-	"class_g     = 'QQ'",
-	"class_g     = 'lx-music-desktop' && !focused",
+  "window_type = 'dock'",
+  "window_type = 'desktop'",
+  "class_g     = 'kitty'",
+  "class_g     = 'Alacritty'",
+  "class_g     = 'Code'",
+  "class_g     = 'float'",
+  "class_g     = 'QQ'",
+  "class_g     = 'lx-music-desktop' && !focused",
 ]
 blur-kern = "3x3box"
 
 
 # Opacity
 opacity       = 1.0; # The opacity for menus. (default 1.0)
-                     # inactive-opacity = 0.8;			# Opacity of inactive windows. (0.1 - 1.0)
+                     # inactive-opacity = 0.8;      # Opacity of inactive windows. (0.1 - 1.0)
 frame-opacity = 1.0; # Opacity of window titlebars and borders. (0.1 - 1.0)
-                     # inactive-opacity-override = true;	# Inactive opacity set by 'inactive-opacity' overrides value of _NET_WM_OPACITY.
+                     # inactive-opacity-override = true;  # Inactive opacity set by 'inactive-opacity' overrides value of _NET_WM_OPACITY.
 
 # inactive-opacity-override = true
 # inactive-opacity = 0.8
 
 opacity-rule = [
-	"70:class_g =   'dwmsystray'",
-	"70:class_g =   'Dunst'",
-	"80:class_g =   'float'",
-	"80:class_g *?= 'lx-music-desktop'",
-	"80:class_g *?= 'Rofi'",
-	"80:class_g =   'Typora'",
-	"80:class_g *?= 'Telegram' && !focused",
-	"80:class_g *?= 'Icalingua'",
-	"80:class_g *?= 'weixin' && !focused",
-	"80:class_g *?= 'CodeForces Contest Helper v2' && !focused",
-	"80:class_g *?= 'calibre' && !focused",
-	"80:class_g *?= 'sioyek'",
-	"80:class_g *?= 'Nutstore'",
-	"80:class_g *?= 'chromium' && !focused",
-	"80:class_g *?= 'discord' && !focused",
-	"80:class_g *?= 'qq' && !focused",
-	"80:class_g *?= 'obs' && !focused",
-	"80:class_g =   'QtCreator'",
-	"80:class_g =   'kate'",
-	"80:class_g =   'Code'",
-	"80:class_g =   'Alacritty'",
-	"80:class_g =   'kitty' && !focused",
+  "70:class_g =   'dwmsystray'",
+  "70:class_g =   'Dunst'",
+  "80:class_g =   'float'",
+  "80:class_g *?= 'lx-music-desktop'",
+  "80:class_g *?= 'Rofi'",
+  "80:class_g =   'Typora'",
+  "80:class_g *?= 'Telegram' && !focused",
+  "80:class_g *?= 'Icalingua'",
+  "80:class_g *?= 'weixin' && !focused",
+  "80:class_g *?= 'CodeForces Contest Helper v2' && !focused",
+  "80:class_g *?= 'calibre' && !focused",
+  "80:class_g *?= 'sioyek'",
+  "80:class_g *?= 'Nutstore'",
+  "80:class_g *?= 'chromium' && !focused",
+  "80:class_g *?= 'discord' && !focused",
+  "80:class_g *?= 'qq' && !focused",
+  "80:class_g *?= 'obs' && !focused",
+  "80:class_g =   'QtCreator'",
+  "80:class_g =   'kate'",
+  "80:class_g =   'Code'",
+  "80:class_g =   'Alacritty'",
+  "80:class_g =   'kitty' && !focused",
 ];
 
 
