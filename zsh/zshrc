@@ -132,6 +132,11 @@ unset key
 eval "$(starship init zsh)"
 [ $(tty) = "/dev/tty1" ] && cd ~ && startx
 
+wttr()
+{
+  curl -H "Accept-Language: zh" "http://wttr.in/${1-xiamen}?m&${2-3}"
+}
+
 # mu alias
 alias vim='/usr/bin/nvim'
 alias vi='/usr/bin/vim'
