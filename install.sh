@@ -5,3 +5,4 @@ yay -S adobe-source-code-pro-font adobe-source-han-sans-cn-fonts adobe-source-ha
 
 # code
 sudo pacman -S clang nodejs npm yarn lua python python-black neovim python-pynvim bash-language-server pyright fd lua-language-server ripgrep typescript-language-server vscode-css-languageserver vscode-html-languageserver vscode-json-languageserver vim-language-server
+npm install -g live-server
