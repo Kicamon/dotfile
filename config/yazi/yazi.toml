@@ -45,6 +45,7 @@ rules = [
   { mime = "inode/x-empty",   use = [ "edit", "reveal" ] },
 
   { mime = "application/zip",             use = ["extract"] },
+  { mime = "application/rar",             use = ["extract"] },
   { mime = "application/tar.xz",          use = ["extract"] },
   { mime = "application/gzip",            use = ["extract"] },
   { mime = "application/x-bzip",          use = ["extract"] },
