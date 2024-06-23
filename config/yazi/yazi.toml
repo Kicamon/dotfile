@@ -32,7 +32,7 @@ play = [
   { run = '''mediainfo "$1"; echo "Press enter to exit"; read _''', block = true, desc = "Show media info", for = "unix" },
 ]
 image = [
-  { run = 'nomacs "$@"',  desc = "ImageOpen", for = "linux" },
+  { run = 'ristretto "$@"',  desc = "ImageOpen", for = "linux" },
 ]
 
 [open]
