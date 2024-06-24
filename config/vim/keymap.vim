@@ -14,7 +14,7 @@ nnoremap sj <cmd>set splitbelow<CR>:split<CR>
 nnoremap sk <cmd>set nosplitbelow<CR>:split<CR>
 nnoremap sl <cmd>set splitright<CR>:vsplit<CR>
 inoremap ( ()<ESC>i
-inoremap { {<CR>}<ESC>O
+inoremap { {}<ESC>i
 inoremap ' ''<ESC>i
 inoremap " ""<ESC>i
 inoremap <C-l> <Right>
@@ -27,3 +27,20 @@ nnoremap <leader><CR> :noh<CR>
 vnoremap N :normal 
 tnoremap <C-n> <C-\><C-N>
 tnoremap <C-o> <C-\><C-N><C-O>
+
+function! HandleCurlyBraces()
+	let l:pos = getpos('.')
+	let l:line = getline('.')
+	let l:col = l:pos[2]
+
+	let l:char_before = l:col >= 1 ? l:line[l:col - 2] : ''
+	let l:char_after = l:col <= len(l:line) ? l:line[l:col - 1] : ''
+
+	if l:char_before == '{' && l:char_after == '}'
+		return "\<ESC>f}xa\<CR>}\<ESC>O"
+	else
+		return "\<CR>"
+	endif
+endfunction
+
+inoremap <expr> <CR> HandleCurlyBraces()
