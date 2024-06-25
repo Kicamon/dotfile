@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+<fontconfig>
+  <its:rules xmlns:its="http://www.w3.org/2005/11/its" version="1.0">
+    <its:translateRule
+      translate="no"
+      selector="/fontconfig/*[not(self::description)]"
+    />
+  </its:rules>
+
+  <description>Android Font Config</description>
+
+  <!-- Font directory list -->
+
+  <dir>/usr/share/fonts</dir>
+  <dir>/usr/local/share/fonts</dir>
+  <dir prefix="xdg">fonts</dir>
+  <!-- the following element will be removed in the future -->
+
+  <!-- 中文默认字体使用思源黑体和思源宋体,不使用　Noto Sans CJK SC 是因为这个字体会在特定情况下显示片假字. -->
+  <match>
+    <test name="lang" compare="contains">
+      <string>zh</string>
+    </test>
+    <edit name="family" mode="prepend">
+      <string>Source Han Sans CN</string>
+    </edit>
+  </match>
+
+  <!-- Load local system customization file -->
+  <include ignore_missing="yes">conf.d</include>
+
+  <!-- Font cache directory list -->
+
+  <cachedir>/var/cache/fontconfig</cachedir>
+  <cachedir prefix="xdg">fontconfig</cachedir>
+  <!-- the following element will be removed in the future -->
+  <cachedir>~/.fontconfig</cachedir>
+
+  <config>
+    <!-- Rescan configuration every 30 seconds when FcFontSetList is called -->
+    <rescan>
+      <int>30</int>
+    </rescan>
+  </config>
+</fontconfig>
