@@ -31,3 +31,11 @@ if [ $opt == "y"]; then
   cp -rp ./local/* ~/.local/share
   cp ./.xinitrc ./.Xresources ./.npmrc ~/
 fi
+
+# install zim
+opt=N
+echo "install zim?[y/N]"
+read opt
+if [ $opt == "y"]; then
+  wget -nv -O - https://raw.githubusercontent.com/zimfw/install/master/install.zsh | zsh
+fi
