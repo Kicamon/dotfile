@@ -132,12 +132,30 @@ unset key
 eval "$(starship init zsh)"
 [ $(tty) = "/dev/tty1" ] && cd ~ && startx
 
-wttr(){
+function qgit(){
+  git add .
+  if [ -n "$1" ];then
+    git commit -m $1
+  else
+    time=$(date "+%Y/%m/%d,%H:%M")
+    git commit -m ${time}
+  fi
+  wait
+  git push
+}
+
+function wttr(){
   curl -H "Accept-Language: zh" "http://wttr.in/${1-xiamen}?m&${2-3}"
 }
 
-zi(){
+function zi(){
   zip -q -r ${1}.zip ${1}
+}
+
+function gd(){
+  dir=$(lua $HOME/.config/zsh/quick_jump.lua ${1})
+  dir=$(eval echo "$dir")
+  cd $dir
 }
 
 # mu alias
@@ -148,7 +166,6 @@ alias ra='yazi'
 alias c='clear'
 alias s='neofetch'
 alias sudo='sudo -E'
-alias qgit='zsh ~/.config/zsh/qgit.sh'
 alias pwd='pwd | xclip -sel c && pwd'
 
 source ~/.config/zsh/fzf.zsh
