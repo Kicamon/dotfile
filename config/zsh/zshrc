@@ -148,12 +148,15 @@ function wttr(){
   curl -H "Accept-Language: zh" "http://wttr.in/${1-xiamen}?m&${2-3}"
 }
 
-function zi(){
-  zip -q -r ${1}.zip ${1}
+function zip(){
+  /usr/bin/zip -q -r ${1}.zip ${1}
 }
 
 function gd(){
-  dir=$(lua $HOME/.config/zsh/quick_jump.lua ${1})
+  dir=$1
+  if ! [ -d "$dir" ];then
+    dir=$(lua $HOME/.config/zsh/quick_jump.lua $dir)
+  fi
   dir=$(eval echo "$dir")
   cd $dir
 }

@@ -12,7 +12,7 @@ zstyle ':fzf-tab:complete:*:options' fzf-flags --preview-window=down:0:wrap
 zstyle ':fzf-tab:complete:(docker|cargo):*' fzf-flags --preview-window=down:0:wrap
 zstyle ':fzf-tab:complete:systemctl:*' fzf-flags --preview-window=down:0:wrap
 zstyle ':fzf-tab:complete:systemctl-(status|(re|)start|(dis|en)able):*' fzf-preview 'SYSTEMD_COLORS=1 systemctl status $word'
-# zstyle ':fzf-tab:complete:systemctl-*:*' fzf-preview 'SYSTEMD_COLORS=1 systemctl status $word'
+zstyle ':fzf-tab:complete:systemctl-*:*' fzf-preview 'SYSTEMD_COLORS=1 systemctl status $word'
 zstyle ':fzf-tab:complete:yay:*' fzf-preview 'yay -Qi $word | bat --color=always -plyaml || yay -Si $word | bat --color=always-plyaml'
 zstyle ':fzf-tab:complete:pacman:*' fzf-preview 'pacman -Qi $word || pacman -Si $word'
 zstyle ':fzf-tab:complete:(\\|)run-help:*' fzf-preview 'run-help $word'

@@ -1,8 +1,8 @@
 local jump = {
-  ['ebook'] = '~/Documents/ebook',
   ['nvim'] = '~/.config/nvim',
   ['zsh'] = '~/.config/zsh',
   ['dwm'] = '~/.config/dwm',
+  ['ebook'] = '~/Documents/ebook',
   ['algo'] = '~/Documents/Algorithm',
   ['pro'] = '~/Documents/project',
   ['dot'] = '~/Documents/dotfile',

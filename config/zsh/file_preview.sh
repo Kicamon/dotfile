@@ -8,9 +8,6 @@ elif [ "$category" = text ]; then
   (bat -p --style numbers --color=always "$1" ) 2>/dev/null | head -1000
 elif [ "$mime" = application/pdf ]; then
   pdftotext $1 - | less
-elif [ "$category" = image ]; then
-  (~/.config/zsh/img_preview $1) 2>/dev/null
-  chafa "$1"
 else
   echo $1 is a $category file
 fi
