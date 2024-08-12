@@ -18,7 +18,9 @@ update(){
     ~/.config/zsh \
     ~/.config/tmux \
     ./config
-  cp ~/.xinitrc ~/.Xresources ./
+  cp ~/.xinitrc \
+    ~/.Xresources \
+    ./user
   cp -rp ~/.local/share/fcitx5 \
     ~/.local/share/fonts \
     ~/.local/share/themes \

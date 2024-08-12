@@ -20,7 +20,7 @@ yay -S - < ./fontlist.txt --noconfirm
 echo "init config"
 cp -rp ./config/* "$HOME"/.config
 cp -rp ./local/* "$HOME"/.local/share
-cp ./.xinitrc ./.Xresources "$HOME"/
+cp ./user/.* "$HOME"/
 
 echo "config git"
 sudo pacman -S git

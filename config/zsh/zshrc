@@ -152,6 +152,11 @@ function zip(){
   /usr/bin/zip -q -r ${1}.zip ${1}
 }
 
+function template(){
+  cp -rf $HOME/.config/nvim/template/${1}/* ./
+  cp -rf $HOME/.config/nvim/template/${1}/.* ./
+}
+
 function gd(){
   dir=$1
   if ! [ -d "$dir" ];then
@@ -172,3 +177,5 @@ alias sudo='sudo -E'
 alias pwd='pwd | xclip -sel c && pwd'
 
 source ~/.config/zsh/fzf.zsh
+
+export EDITOR=/usr/bin/nvim
