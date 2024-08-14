@@ -144,10 +144,6 @@ function qgit(){
   git push
 }
 
-function wttr(){
-  curl -H "Accept-Language: zh" "http://wttr.in/${1-xiamen}?m&${2-3}"
-}
-
 function zip(){
   /usr/bin/zip -q -r ${1}.zip ${1}
 }

@@ -6,10 +6,12 @@ local jump = {
   ['kitty'] = '~/.config/kitty',
   ['picom'] = '~/.config/picom',
   ['yazi'] = '~/.config/yazi',
+  ['tmux'] = '~/.config/tmux',
   ['ebook'] = '~/Documents/ebook',
   ['algo'] = '~/Documents/Algorithm',
   ['pro'] = '~/Documents/project',
   ['dot'] = '~/Documents/dotfile',
+  ['note'] = '~/Documents/study/Note/wiki'
 }
 
 local dir = arg[1]
