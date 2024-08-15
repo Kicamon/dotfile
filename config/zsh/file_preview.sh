@@ -8,7 +8,6 @@ dir=$(lua $HOME/.config/zsh/quick_jump.lua $dir)
 dir=$(eval echo "$dir")
 
 if [ -d "$dir" ]; then
-  echo $1
   exa -l --no-user --no-time --icons --no-permissions --no-filesize "$dir" 2>/dev/null
 elif [ "$category" = text ]; then
   (bat -p --style numbers --color=always "$1" ) 2>/dev/null | head -1000
