@@ -8,15 +8,19 @@ local jump = {
   ['yazi'] = '~/.config/yazi',
   ['tmux'] = '~/.config/tmux',
   ['ebook'] = '~/Documents/ebook',
-  ['algo'] = '~/Documents/Algorithm',
-  ['pro'] = '~/Documents/project',
-  ['dot'] = '~/Documents/dotfile',
-  ['note'] = '~/Documents/study/Note/wiki'
+  ['algorithm'] = '~/Documents/Algorithm',
+  ['project'] = '~/Documents/project',
+  ['dotfile'] = '~/Documents/dotfile',
+  ['note'] = '~/Documents/study/Note/wiki',
 }
 
 local dir = arg[1]
 if dir == nil then
   print('~')
+elseif dir == '-list' then
+  for v, _ in pairs(jump) do
+    print(v)
+  end
 elseif jump[dir] == nil then
   print(dir)
 else

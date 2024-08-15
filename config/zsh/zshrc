@@ -153,14 +153,13 @@ function template(){
   cp -rf $HOME/.config/nvim/template/${1}/.* ./
 }
 
-function gd(){
-  dir=$1
-  if ! [ -d "$dir" ];then
-    dir=$(lua $HOME/.config/zsh/quick_jump.lua $dir)
-  fi
-  dir=$(eval echo "$dir")
-  cd $dir
+function _killall_processes(){
+  local processes
+  processes=($(ps -e -o comm= | sort -u))
+  compadd "$@" -- $processes
 }
+
+compdef _killall_processes killall
 
 # mu alias
 alias vi='/usr/bin/vim'
@@ -173,5 +172,6 @@ alias sudo='sudo -E'
 alias pwd='pwd | xclip -sel c && pwd'
 
 source ~/.config/zsh/fzf.zsh
+source ~/.config/zsh/gd.zsh
 
 export EDITOR=/usr/bin/nvim

@@ -2,6 +2,7 @@ export FZF_DEFAULT_OPTS="--preview 'bash ~/.config/zsh/file_preview.sh {}'"
 
 zstyle ':completion:complete:*:options' sort false
 zstyle ':fzf-tab:complete:cd:*' query-string input
+zstyle ':fzf-tab:complete:gd:*' query-string input
 zstyle ':completion:*:descriptions' format "[%d]"
 zstyle ':fzf-tab:*' group-colors $'\033[15m' $'\033[14m' $'\033[33m' $'\033[35m' $'\033[15m' $'\033[14m' $'\033[33m' $'\033[35m'
 zstyle ':fzf-tab:*' prefix ''

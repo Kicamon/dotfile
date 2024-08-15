@@ -14,6 +14,7 @@ ttf-arphic-uming
 ttf-carlito
 ttf-dejavu
 ttf-droid
+ttf-firacode-nerd
 ttf-foundertype-sc-fonts
 ttf-hack
 ttf-hannom

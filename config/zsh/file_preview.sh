@@ -2,8 +2,17 @@
 
 mime=$(file -bL --mime-type "$1")
 category=${mime%%/*}
-if [ -d "$1" ]; then
-  exa -l --no-user --no-time --icons --no-permissions --no-filesize "$1" 2>/dev/null
+
+dir=$1
+if [ "$2" == "gd" ]; then
+  if ! [ -d "$dir" ];then
+    dir=$(lua $HOME/.config/zsh/quick_jump.lua $dir)
+  fi
+  dir=$(eval echo "$dir")
+fi
+
+if [ -d "$dir" ]; then
+  exa -l --no-user --no-time --icons --no-permissions --no-filesize "$dir" 2>/dev/null
 elif [ "$category" = text ]; then
   (bat -p --style numbers --color=always "$1" ) 2>/dev/null | head -1000
 elif [ "$mime" = application/pdf ]; then
