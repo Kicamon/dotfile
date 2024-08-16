@@ -17,10 +17,12 @@ echo "download fonts"
 yay -Syu
 yay -S - < ./fontlist.txt --noconfirm
 
+shopt -s dotglob
+
 echo "init config"
 cp -rp ./config/* "$HOME"/.config
 cp -rp ./local/* "$HOME"/.local/share
-cp ./user/.* "$HOME"/
+cp ./user/* "$HOME"/
 
 echo "config git"
 sudo pacman -S git

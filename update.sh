@@ -17,6 +17,9 @@ update(){
     ~/.config/yazi \
     ~/.config/zsh \
     ~/.config/tmux \
+    ~/.config/ranger \
+    ~/.config/i3 \
+    ~/.config/polybar \
     ./config
   cp ~/.xinitrc \
     ~/.Xresources \

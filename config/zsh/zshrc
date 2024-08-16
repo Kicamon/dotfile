@@ -169,7 +169,6 @@ alias ra='yazi'
 alias c='clear'
 alias s='neofetch'
 alias sudo='sudo -E'
-alias pwd='pwd | xclip -sel c && pwd'
 
 source ~/.config/zsh/fzf.zsh
 source ~/.config/zsh/gd.zsh
