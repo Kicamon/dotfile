@@ -38,6 +38,7 @@ elseif opt == '-list' then
     print(v)
   end
 elseif opt == '-add' then
+  arg[3] = string.gsub(arg[3], '/home/KicamonIce', '~', 1)
   add_jump_list(arg[2], arg[3])
 elseif jump[opt] == nil then
   print(opt)

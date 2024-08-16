@@ -2,8 +2,7 @@ function gd() {
   local opt="$1"
 
   if [[ "$opt" == "-add" ]]; then
-    local mapdir=$(pwd)
-    lua "$HOME/.config/zsh/quick_jump.lua" -add "$2" "$mapdir"
+    lua "$HOME/.config/zsh/quick_jump.lua" -add $2 $(pwd)
   elif [[ "$opt" == "-list" ]]; then
     lua "$HOME/.config/zsh/quick_jump.lua" -list
   elif [[ "$opt" == "-edit" ]]; then
