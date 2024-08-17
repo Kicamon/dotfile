@@ -4,6 +4,7 @@ local file_path = '/home/KicamonIce/.local/state/zsh_jump_list'
 local function read_jump_list()
   local file = io.open(file_path, 'r')
   if not file then
+    io.close(file)
     return
   end
 
@@ -20,10 +21,11 @@ end
 local function add_jump_list(keyword, dir)
   local file = io.open(file_path, 'a')
   if not file then
+    io.close(file)
     return
   end
 
-  file:write(keyword .. ' ' .. dir)
+  file:write(keyword .. ' ' .. dir .. '\n')
 
   io.close(file)
 end
@@ -33,11 +35,11 @@ read_jump_list()
 local opt = arg[1]
 if opt == nil then
   print('~')
-elseif opt == '-list' then
+elseif opt == '-l' then
   for v, _ in pairs(jump) do
     print(v)
   end
-elseif opt == '-add' then
+elseif opt == '-a' then
   arg[3] = string.gsub(arg[3], '/home/KicamonIce', '~', 1)
   add_jump_list(arg[2], arg[3])
 elseif jump[opt] == nil then

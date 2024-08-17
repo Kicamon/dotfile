@@ -3,12 +3,17 @@
 mime=$(file -bL --mime-type "$1")
 category=${mime%%/*}
 
+# get dir
 dir=$1
+if [[ -z "$dir" ]];then
+  dir=$2
+fi
 dir=$(lua $HOME/.config/zsh/quick_jump.lua $dir)
 dir=$(eval echo "$dir")
 
+# preview
 if [ -d "$dir" ]; then
-  echo  Directory: $dir
+  echo -e "\e[1;34m Directory: $dir \e[0m"
   exa -l --no-user --no-time --icons --no-permissions --no-filesize "$dir" 2>/dev/null
 elif [ "$category" = text ]; then
   (bat -p --style numbers --color=always "$1" ) 2>/dev/null | head -1000

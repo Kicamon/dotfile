@@ -7,19 +7,19 @@ update(){
     ~/.config/fish \
     ~/.config/fontconfig \
     ~/.config/gtk-* \
+    ~/.config/i3 \
     ~/.config/kitty \
     ~/.config/neofetch \
     ~/.config/picom \
+    ~/.config/polybar \
     ~/.config/qt6ct \
+    ~/.config/ranger \
     ~/.config/rofi \
     ~/.config/starship.toml \
+    ~/.config/tmux \
     ~/.config/vim \
     ~/.config/yazi \
     ~/.config/zsh \
-    ~/.config/tmux \
-    ~/.config/ranger \
-    ~/.config/i3 \
-    ~/.config/polybar \
     ./config
   cp ~/.xinitrc \
     ~/.Xresources \

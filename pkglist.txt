@@ -22,7 +22,7 @@ xfce4-power-manager
 thunar
 thunar-volman
 ristretto
-flameshot
+snipaste
 kitty
 sioyek
 yazi
