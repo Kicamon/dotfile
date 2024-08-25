@@ -15,14 +15,14 @@ echo -e "prefix=/home/KicamonIce/.local/share/npm" | tee "$HOME"/.npmrc
 
 echo "download fonts"
 yay -Syu
-yay -S - < ./fontlist.txt --noconfirm
+yay -S - --noconfirm <./fontlist.txt
 
 shopt -s dotglob
 
 echo "init config"
-cp -rp ./config/* "$HOME"/.config
-cp -rp ./local/* "$HOME"/.local/share
-cp ./user/* "$HOME"/
+cp -rp ./config/. "$HOME"/.config
+cp -rp ./local/. "$HOME"/.local/share
+cp ./user/. "$HOME"/
 
 echo "config git"
 sudo pacman -S git
@@ -34,26 +34,26 @@ git config --global init.defaultBranch 'main'
 echo "download nvim config"
 git clone git@github.com:Kicamon/nvim.git "$HOME"/.config/nvim
 sudo pacman -S bash-language-server \
-  clang \
-  fd \
-  gdb \
-  lua \
-  lua-language-server \
-  neovim \
-  nodejs \
-  npm \
-  pyright \
-  python \
-  python-black \
-  python-pynvim \
-  ripgrep \
-  typescript-language-server \
-  vim-language-server \
-  vscode-css-languageserver \
-  vscode-html-languageserver \
-  vscode-json-languageserver \
-  yarn
+	clang \
+	fd \
+	gdb \
+	lua \
+	lua-language-server \
+	neovim \
+	nodejs \
+	npm \
+	pyright \
+	python \
+	python-black \
+	python-pynvim \
+	ripgrep \
+	typescript-language-server \
+	vim-language-server \
+	vscode-css-languageserver \
+	vscode-html-languageserver \
+	vscode-json-languageserver \
+	yarn
 npm install -g live-server
 
 echo "running update aur and install package"
-yay -S - < ./pkglist.txt --noconfirm
+yay -S - --noconfirm <./pkglist.txt

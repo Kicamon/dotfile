@@ -9,6 +9,7 @@ zstyle ':fzf-tab:*' prefix ''
 zstyle ':completion:*:*:*:*:processes' command "ps -u $USER -o pid,user,comm -w -w"
 zstyle ':fzf-tab:complete:(kill|ps):argument-rest' fzf-preview '[ "$group" = "process ID" ] && ps --pid=$word -o cmd --no-headers -w -w'
 zstyle ':fzf-tab:complete:(kill|ps):argument-rest' fzf-flags --preview-window=down:3:wrap
+zstyle ':fzf-tab:complete:killall:*' fzf-preview 'bash ~/.config/zsh/file_preview.sh ${word} -kill'
 zstyle ':fzf-tab:complete:*:options' fzf-flags --preview-window=down:0:wrap
 zstyle ':fzf-tab:complete:(docker|cargo):*' fzf-flags --preview-window=down:0:wrap
 zstyle ':fzf-tab:complete:systemctl:*' fzf-flags --preview-window=down:0:wrap

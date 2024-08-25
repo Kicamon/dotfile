@@ -35,3 +35,4 @@ lazygit
 fzf
 neofetch
 tela-icon-theme-bin
+bottom

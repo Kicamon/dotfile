@@ -98,11 +98,11 @@ ZIM_HOME=${ZDOTDIR:-${HOME}}/.zim
 # Download zimfw plugin manager if missing.
 if [[ ! -e ${ZIM_HOME}/zimfw.zsh ]]; then
   if (( ${+commands[curl]} )); then
-    curl -fsSL --create-dirs -o ${ZIM_HOME}/zimfw.zsh \
-        https://github.com/zimfw/zimfw/releases/latest/download/zimfw.zsh
+		curl -fsSL --create-dirs -o ${ZIM_HOME}/zimfw.zsh \
+			https://github.com/zimfw/zimfw/releases/latest/download/zimfw.zsh
   else
-    mkdir -p ${ZIM_HOME} && wget -nv -O ${ZIM_HOME}/zimfw.zsh \
-        https://github.com/zimfw/zimfw/releases/latest/download/zimfw.zsh
+		mkdir -p ${ZIM_HOME} && wget -nv -O ${ZIM_HOME}/zimfw.zsh \
+			https://github.com/zimfw/zimfw/releases/latest/download/zimfw.zsh
   fi
 fi
 # Install missing modules, and update ${ZIM_HOME}/init.zsh if missing or outdated.
@@ -129,37 +129,48 @@ for key ('j') bindkey -M vicmd ${key} history-substring-search-down
 unset key
 # }}} End configuration added by Zim install
 
+# user set
+
+export EDITOR=/usr/bin/nvim
+
 eval "$(starship init zsh)"
 [ $(tty) = "/dev/tty1" ] && cd ~ && startx
 
-function qgit(){
+source ~/.config/zsh/fzf.zsh
+source ~/.config/zsh/gd.zsh
+
+qgit(){
   git add .
-  if [ -n "$1" ];then
-    git commit -m $1
-  else
-    time=$(date "+%Y/%m/%d,%H:%M")
-    git commit -m ${time}
-  fi
+  git commit -m $(date "+%Y/%m/%d,%H:%M")
   wait
   git push
 }
 
-function zip(){
+zip(){
   /usr/bin/zip -q -r ${1}.zip ${1}
 }
 
-function template(){
-  cp -rf $HOME/.config/nvim/template/${1}/* ./
-  cp -rf $HOME/.config/nvim/template/${1}/.* ./
+template(){
+  cp -rf $HOME/.config/nvim/template/${1}/. ./
 }
 
-function _killall_processes(){
+trash_clear(){
+  rm -rf $HOME/.local/share/Trash/files/.
+  rm -rf $HOME/.local/share/Trash/info/.
+}
+
+backup(){
+	mv "$1" "$1"-backup
+}
+
+_killall_processes(){
   local processes
   processes=($(ps -e -o comm= | sort -u))
   compadd "$@" -- $processes
 }
 
 compdef _killall_processes killall
+
 
 # mu alias
 alias vi='/usr/bin/vim'
@@ -170,7 +181,3 @@ alias c='clear'
 alias s='neofetch'
 alias sudo='sudo -E'
 
-source ~/.config/zsh/fzf.zsh
-source ~/.config/zsh/gd.zsh
-
-export EDITOR=/usr/bin/nvim
