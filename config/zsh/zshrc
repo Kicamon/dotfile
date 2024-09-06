@@ -180,5 +180,6 @@ alias ra='yazi'
 alias c='clear'
 alias s='neofetch'
 alias sudo='sudo -E'
+alias tmuxn='tmux new -n zsh -s'
+alias tmuxa='tmux attach'
 alias mpv='mpv --geometry=1280x700'
-
