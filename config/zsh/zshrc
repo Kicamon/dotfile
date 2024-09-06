@@ -180,4 +180,5 @@ alias ra='yazi'
 alias c='clear'
 alias s='neofetch'
 alias sudo='sudo -E'
+alias mpv='mpv --geometry=1280x700'
 

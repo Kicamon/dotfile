@@ -34,7 +34,7 @@ shopt -s dotglob
 
 remove_file() {
 	local dir=$1
-	for file in ${dir}/*; do
+	for file in ${dir}/.; do
 		if [[ -f ${file} && ${file} == "./local/fonts/"*".uuid" ]]; then
 			rm ${file}
 		elif [[ -d ${file} ]]; then

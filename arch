@@ -36,24 +36,24 @@ git clone git@github.com:Kicamon/nvim.git "$HOME"/.config/nvim
 sudo pacman -S bash-language-server \
 	clang \
 	fd \
-	gdb \
 	lua \
 	lua-language-server \
-	neovim \
-	nodejs \
-	npm \
+	luarocks \
 	pyright \
 	python \
 	python-black \
 	python-pynvim \
 	ripgrep \
+	rust \
+	rust-analyzer \
+	shfmt \
 	typescript-language-server \
 	vim-language-server \
 	vscode-css-languageserver \
 	vscode-html-languageserver \
 	vscode-json-languageserver \
-	yarn
-npm install -g live-server
+	yazi
+npm install -g live-server neovim
 
 echo "running update aur and install package"
 yay -S - --noconfirm <./pkglist.txt

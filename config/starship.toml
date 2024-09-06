@@ -4,7 +4,7 @@
 style_user = 'white bold'
 style_root = 'black bold'
 #format = 'user: [$user]($style) '
-format = '[$user]($style) [at](green) [lkr](bold) '
+format = '[$user]($style) '
 disabled = false
 show_always = true
 

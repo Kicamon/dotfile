@@ -48,8 +48,7 @@ extract = [
   { run = 'unar "$1"', orphan = true, desc = "Extract here", for = "unix" },
 ]
 play = [
-  { run = 'mpv --force-window "$@"', orphan = true, for = "unix" },
-  { run = 'mpv --force-window "%1"', orphan = true, for = "windows" },
+  { run = 'mpv --geometry=1280x700 "$@"', orphan = true, for = "unix" },
   { run = '''mediainfo "$1"; echo "Press enter to exit"; read _''', block = true, desc = "Show media info", for = "unix" },
 ]
 image = [
@@ -89,7 +88,7 @@ rules = [
 [plugin]
 
 fetchers = [
-  { id = "git", name = "*", run = "git",if = "!mime", prio = "normal" },
-  { id = "git", name = "*/", run = "git",if = "mime", prio = "normal" },
-  { id = "mime-ext", name = "*", run = "mime-ext",if = "!mime", prio = "high" },
+  { id = "mime-ext", name = "*", run = "mime-ext", prio = "high" },
+  { id = "git", name = "*", run = "git", prio = "normal" },
+  { id = "git", name = "*/", run = "git", prio = "normal" },
 ]
