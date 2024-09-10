@@ -3,7 +3,6 @@
 [username]
 style_user = 'white bold'
 style_root = 'black bold'
-#format = 'user: [$user]($style) '
 format = '[$user]($style) '
 disabled = false
 show_always = true
@@ -149,4 +148,6 @@ symbol = " "
 symbol = "🅢 "
 
 [character]
-success_symbol = '[◯](bold green)'
+success_symbol = "[λ](bold green)"
+error_symbol = "[✗](bold red)"
+vimcmd_symbol = "[ν](bold green)"

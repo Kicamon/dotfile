@@ -36,3 +36,4 @@ fzf
 neofetch
 tela-icon-theme-bin
 btop
+amberol

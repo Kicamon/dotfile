@@ -1,4 +1,5 @@
 export FZF_DEFAULT_OPTS="--preview 'bash ~/.config/zsh/file_preview.sh {}'"
+export FZF_DEFAULT_COMMAND="fd --exclude={.git,.idea,.vscode,.sass-cache,node_modules,build,dist,vendor} --type f"
 
 zstyle ':completion:complete:*:options' sort false
 zstyle ':fzf-tab:complete:cd:*' query-string input

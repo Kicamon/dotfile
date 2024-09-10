@@ -134,6 +134,7 @@ unset key
 export EDITOR=/usr/bin/nvim
 
 eval "$(starship init zsh)"
+
 [ $(tty) = "/dev/tty1" ] && cd ~ && startx
 
 source ~/.config/zsh/fzf.zsh
@@ -163,6 +164,10 @@ backup(){
 	mv "$1" "$1"-backup
 }
 
+tmuxn(){
+	tmux new -n "$1" -s "$1"
+}
+
 _killall_processes(){
   local processes
   processes=($(ps -e -o comm= | sort -u))
@@ -180,6 +185,6 @@ alias ra='yazi'
 alias c='clear'
 alias s='neofetch'
 alias sudo='sudo -E'
-alias tmuxn='tmux new -n zsh -s'
 alias tmuxa='tmux attach'
+alias du='dust'
 alias mpv='mpv --geometry=1280x700'
