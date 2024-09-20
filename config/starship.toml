@@ -150,4 +150,4 @@ symbol = "🅢 "
 [character]
 success_symbol = "[λ](bold green)"
 error_symbol = "[✗](bold red)"
-vimcmd_symbol = "[ν](bold green)"
+vimcmd_symbol = "[ν](bold yellow)"

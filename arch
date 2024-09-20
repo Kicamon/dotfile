@@ -7,7 +7,6 @@ sudo pacman -S archlinuxcn-keyring archlinux-keyring
 
 echo "config sysmtem"
 sudo pacman -S zsh yay wget
-wget -nv -O - https://raw.githubusercontent.com/zimfw/install/master/install.zsh | zsh
 chsh -s $(which zsh)
 touch "$HOME"/.zshrc "$HOME"/.npmrc
 echo -e "source ~/.config/zsh/zshrc" | tee "$HOME"/.zshrc
@@ -35,7 +34,6 @@ echo "download nvim config"
 git clone git@github.com:Kicamon/nvim.git "$HOME"/.config/nvim
 sudo pacman -S bash-language-server \
 	clang \
-	fd \
 	lua \
 	lua-language-server \
 	luarocks \
@@ -43,9 +41,6 @@ sudo pacman -S bash-language-server \
 	python \
 	python-black \
 	python-pynvim \
-	ripgrep \
-	rust \
-	rust-analyzer \
 	shfmt \
 	typescript-language-server \
 	vim-language-server \
