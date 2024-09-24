@@ -1,13 +1,10 @@
 export FZF_DEFAULT_OPTS="--preview 'bash ~/.config/zsh/file_preview.sh {}'"
 export FZF_DEFAULT_COMMAND="fd --exclude={.git,.idea,.vscode,.sass-cache,node_modules,build,dist,vendor} --type f"
 
-zstyle ':completion:complete:*:options' sort false
 zstyle ':fzf-tab:complete:cd:*' query-string input
 zstyle ':fzf-tab:complete:gd:*' fzf-preview 'bash ~/.config/zsh/file_preview.sh ${realpath} ${word}'
-zstyle ':completion:*:descriptions' format "[%d]"
 zstyle ':fzf-tab:*' group-colors $'\033[15m' $'\033[14m' $'\033[33m' $'\033[35m' $'\033[15m' $'\033[14m' $'\033[33m' $'\033[35m'
 zstyle ':fzf-tab:*' prefix ''
-zstyle ':completion:*:*:*:*:processes' command "ps -u $USER -o pid,user,comm -w -w"
 zstyle ':fzf-tab:complete:(kill|ps):argument-rest' fzf-preview '[ "$group" = "process ID" ] && ps --pid=$word -o cmd --no-headers -w -w'
 zstyle ':fzf-tab:complete:(kill|ps):argument-rest' fzf-flags --preview-window=down:3:wrap
 zstyle ':fzf-tab:complete:killall:*' fzf-preview 'bash ~/.config/zsh/file_preview.sh ${word} -kill'

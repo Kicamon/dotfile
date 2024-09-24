@@ -25,6 +25,25 @@ zinit light Aloxaf/fzf-tab
 
 autoload -U compinit && compinit
 
+HISTSIZE=5000
+HISTFILE=~/.zhistory
+SAVEHIST=$HISTSIZE
+HISTDUP=erase
+setopt appendhistory
+setopt sharehistory
+setopt hist_ignore_space
+setopt hist_ignore_all_dups
+setopt hist_save_no_dups
+setopt hist_ignore_dups
+setopt hist_find_no_dups
+
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+zstyle ':completion:*' menu no
+zstyle ':completion:*:*:*:*:processes' command "ps -u $USER -o pid,user,comm -w -w"
+zstyle ':completion:complete:*:options' sort false
+zstyle ':completion:*:descriptions' format "[%d]"
+
 # user set
 
 export EDITOR=/usr/bin/nvim
