@@ -49,9 +49,9 @@ update_up() {
 }
 
 update_down() {
-	cp -rp ./config/. "$HOME"/.config
-	cp -rp ./local/. "$HOME"/.local/share
-	cp ./user/. "$HOME"/
+	cp -rf ./config/. "$HOME"/.config
+	cp -rf ./local/. "$HOME"/.local/share
+	cp -rf ./user/. "$HOME"/
 	echo -e "\e[31mupdate completed\e[0m"
 }
 
