@@ -1,5 +1,5 @@
-local jump = {}
-local file_path = '/home/KicamonIce/.local/state/zsh_jump_list'
+local jump, home = {}, os.getenv('HOME')
+local file_path = home .. '/.local/state/zsh_jump_list'
 
 local function read_jump_list()
   local file = io.open(file_path, 'r')
@@ -40,7 +40,8 @@ elseif opt == '-l' then
     print(v)
   end
 elseif opt == '-a' then
-  arg[3] = string.gsub(arg[3], '/home/KicamonIce', '~', 1)
+  ---@diagnostic disable-next-line: param-type-mismatch
+  arg[3] = string.gsub(arg[3], home, '~', 1)
   add_jump_list(arg[2], arg[3])
 elseif jump[opt] == nil then
   print(opt)

@@ -24,4 +24,4 @@ echo "install dependencies"
 sudo apt install bat eza fzf lua5.1 neofetch neovim python3
 curl -sS https://starship.rs/install.sh | sh
 
-source ~/.zshrc
+mkdir "$HOME"/.local/state/zsh_jump_list
