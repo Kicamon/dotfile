@@ -6,13 +6,13 @@ echo "config sysmtem"
 sudo apt install zsh wget curl
 chsh -s $(which zsh)
 echo -e "source ~/.config/zsh/zshrc" | tee "$HOME"/.zshrc
-mkdir "$HOME"/.local/state/; touch "$HOME"/.local/state/zsh_jump_list
+mkdir "$HOME"/.local/statea
+touch "$HOME"/.local/state/zsh_jump_list
 
 shopt -s dotglob
 
 echo "init config"
-cp -rf ./config/. "$HOME"/.config
-cp -rf ./local/. "$HOME"/.local/share
+./update down
 
 echo "config git"
 sudo apt install git
@@ -22,6 +22,5 @@ git config --global core.editor "nvim"
 git config --global init.defaultBranch 'main'
 
 echo "install dependencies"
-sudo apt install bat eza fzf lua5.1 neofetch neovim python3
+sudo apt install bat eza fzf lua5.4 neofetch neovim python3
 curl -sS https://starship.rs/install.sh | sh
-
