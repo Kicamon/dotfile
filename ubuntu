@@ -6,6 +6,7 @@ echo "config sysmtem"
 sudo apt install zsh wget curl
 chsh -s $(which zsh)
 echo -e "source ~/.config/zsh/zshrc" | tee "$HOME"/.zshrc
+mkdir "$HOME"/.local/state/; touch "$HOME"/.local/state/zsh_jump_list
 
 shopt -s dotglob
 
@@ -24,4 +25,3 @@ echo "install dependencies"
 sudo apt install bat eza fzf lua5.1 neofetch neovim python3
 curl -sS https://starship.rs/install.sh | sh
 
-mkdir "$HOME"/.local/state/zsh_jump_list

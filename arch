@@ -11,6 +11,7 @@ chsh -s $(which zsh)
 touch "$HOME"/.zshrc "$HOME"/.npmrc
 echo -e "source ~/.config/zsh/zshrc" | tee "$HOME"/.zshrc
 echo -e "prefix=/home/KicamonIce/.local/share/npm" | tee "$HOME"/.npmrc
+mkdir "$HOME"/.local/state/; touch "$HOME"/.local/state/zsh_jump_list
 
 echo "download fonts"
 yay -Syu
@@ -52,3 +53,4 @@ npm install -g live-server neovim
 
 echo "running update aur and install package"
 yay -S - --noconfirm <./pkglist.txt
+
