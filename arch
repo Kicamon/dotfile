@@ -19,9 +19,9 @@ yay -S - --noconfirm <./fontlist.txt
 shopt -s dotglob
 
 echo "init config"
-cp -rp ./config/. "$HOME"/.config
-cp -rp ./local/. "$HOME"/.local/share
-cp ./user/. "$HOME"/
+cp -rf ./config/. "$HOME"/.config
+cp -rf ./local/. "$HOME"/.local/share
+cp -rf ./user/. "$HOME"/
 
 echo "config git"
 sudo pacman -S git

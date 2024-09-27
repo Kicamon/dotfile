@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+
+echo -e "\n185.199.108.133 raw.githubusercontent.com\n192.30.253.112 github.com" | sudo tee -a /etc/hosts
+sudo apt update
+
+echo "config sysmtem"
+sudo apt install zsh wget curl
+chsh -s $(which zsh)
+echo -e "source ~/.config/zsh/zshrc" | tee "$HOME"/.zshrc
+
+shopt -s dotglob
+
+echo "init config"
+cp -rf ./config/. "$HOME"/.config
+cp -rf ./local/. "$HOME"/.local/share
+
+echo "config git"
+sudo apt install git
+git config --global user.name "Kicamon"
+git config --global user.email "kicamonice@gmail.com"
+git config --global core.editor "nvim"
+git config --global init.defaultBranch 'main'
+
+echo "install dependencies"
+sudo apt install bat eza fzf lua5.1 neofetch neovim python3
+curl -sS https://starship.rs/install.sh | sh
+
+source ~/.zshrc
