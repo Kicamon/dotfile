@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-echo -e "\n185.199.108.133 raw.githubusercontent.com\n192.30.253.112 github.com" | sudo tee -a /etc/hosts
 sudo apt update
 
 echo "config sysmtem"
