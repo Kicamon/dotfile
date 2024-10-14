@@ -358,6 +358,21 @@ Description="键盘 - 俄语 - 俄语（带鞑靼字母）"
 Language=ru
 Label="ru (rtu)"
 
+[keyboard-ru-diktor]
+Description="键盘 - 俄语 - 俄语（Diktor）"
+Language=ru
+Label=diktor
+
+[keyboard-ru-ruintl_ru]
+Description="键盘 - 俄语 - 俄语（国际，RU）"
+Language=ru
+Label="ru (ruintl_ru)"
+
+[keyboard-ru-ruintl_en]
+Description="键盘 - 俄语 - 俄语（国际，EN）"
+Language=en
+Label="en (ruintl_en)"
+
 [keyboard-br]
 Description="键盘 - 葡萄牙语（巴西）"
 Language=pt
@@ -2714,12 +2729,12 @@ Language=fr
 Label="fr (dvorak)"
 
 [keyboard-fr-ergol]
-Description="键盘 - 法语 - French (Ergo‑L)"
+Description="键盘 - 法语 - 法语（Ergo-L）"
 Language=fr
 Label="fr (ergol)"
 
 [keyboard-fr-ergol_iso]
-Description="键盘 - 法语 - French (Ergo‑L, ISO variant)"
+Description="键盘 - 法语 - 法语（Ergo-L，ISO 变种）"
 Language=fr
 Label="fr (ergol_iso)"
 
