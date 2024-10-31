@@ -77,10 +77,6 @@ trash_clear(){
   rm -rf $HOME/.local/share/Trash/info/.*
 }
 
-backup(){
-  mv "$1" "$1"-backup
-}
-
 tn(){
   tmux new -n "$1" -s "$1"
 }
