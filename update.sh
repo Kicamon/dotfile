@@ -2,11 +2,11 @@
 
 remove_file() {
 	local dir=$1
-	for file in ${dir}/.; do
-		if [[ -f ${file} && ${file} == "./local/fonts/"*".uuid" ]]; then
-			rm ${file}
-		elif [[ -d ${file} ]]; then
-			remove_file ${file}
+	for file in "$dir"/*; do
+		if [[ -f "$file" && "$file" =~ \.uuid$ ]]; then
+			rm "$file"
+		elif [[ -d "$file" ]]; then
+			remove_file "$file"
 		fi
 	done
 }
