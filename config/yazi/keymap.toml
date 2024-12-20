@@ -33,7 +33,7 @@ keymap = [
   { on = "<PageDown>",   run = "arrow 100%",  desc = "Move cursor down one page" },
 
   { on = "h", run = "leave", desc = "Go back to the parent directory" },
-  { on = [ "l" ], run = "plugin --sync smart-enter", desc = "Enter the child directory, or open the file" },
+  { on = [ "l" ], run = "plugin smart-enter", desc = "Enter the child directory, or open the file" },
 
   { on = "H", run = "back",    desc = "Go back to the previous directory" },
   { on = "L", run = "forward", desc = "Go forward to the next directory" },

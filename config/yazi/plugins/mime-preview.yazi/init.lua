@@ -737,7 +737,7 @@ local ext_mime_map = {
 	["quox"] = "application/vnd.quobject-quoxdocument",
 	["quiz"] = "application/vnd.quobject-quoxdocument",
 	["tree"] = "application/vnd.rainstor.data",
-	["rar"] = "application/vnd.rar",
+	["rar"] = "application/x-rar",
 	["bed"] = "application/vnd.realvnc.bed",
 	["mxl"] = "application/vnd.recordare.musicxml",
 	["rlm"] = "application/vnd.resilient.logic",
@@ -1419,7 +1419,8 @@ local function match_mimetype(s)
 end
 
 local flush = ya.sync(function (state,mimes)
-	ya.manager_emit("update_mimetype", { updates = mimes })
+	ya.manager_emit("update_mimes", { updates = mimes })
+	ya.manager_emit("update_mimetype", { updates = mimes }) -- TODO: remove this
 	ya.manager_emit("peek", { force = true })
 end)
 
@@ -1467,7 +1468,8 @@ local M = {
 				st.url = url
 				st.task = url
 			end
-			return {}
+			-- return {}
+			return ui.Line {}
 		end
 	
 		Status:children_add(Status_mime,100000,Status.LEFT)
@@ -1481,6 +1483,10 @@ function M:entry()
 	if #mimes then
 		flush(mimes)
 	end
+end
+
+function M:get_mime_data()
+	return ext_mime_map
 end
 
 return M

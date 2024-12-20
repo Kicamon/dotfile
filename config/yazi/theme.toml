@@ -40,10 +40,16 @@ separator_open  = ""
 separator_close = ""
 separator_style = { fg = "#3c3836", bg = "#3c3836" }
 
-# Mode
-mode_normal = { fg = "#282828", bg = "#A89984", bold = true }
-mode_select = { fg = "#282828", bg = "#b8bb26", bold = true }
-mode_unset  = { fg = "#282828", bg = "#d3869b", bold = true }
+[mode]
+normal_main = { fg = "#282828", bg = "#A89984", bold = true }
+normal_alt  = { fg = "#A89984", bg = "#3c3937", bold = true }
+# mode_normal = { fg = "#282828", bg = "#A89984", bold = true }
+select_main = { fg = "#282828", bg = "#b8bb26", bold = true }
+select_alt  = { fg = "#A89984", bg = "#3c3937", bold = true }
+# mode_select = { fg = "#282828", bg = "#b8bb26", bold = true }
+unset_main = { fg = "#282828", bg = "#d3869b", bold = true }
+unset_alt  = { fg = "#A89984", bg = "#3c3937", bold = true }
+# mode_unset  = { fg = "#282828", bg = "#d3869b", bold = true }
 
 # Progress
 progress_label  = { fg = "#ebdbb2", bold = true }
@@ -51,12 +57,11 @@ progress_normal = { fg = "#504945", bg = "#3c3836" }
 progress_error  = { fg = "#fb4934", bg = "#3c3836" }
 
 # Permissions
-permissions_t = { fg = "#504945" }
-permissions_r = { fg = "#b8bb26" }
-permissions_w = { fg = "#fb4934" }
-permissions_x = { fg = "#b8bb26" }
-permissions_s = { fg = "#665c54" }
-
+perm_type = { fg = "#504945" }
+perm_read = { fg = "#b8bb26" }
+perm_write = { fg = "#fb4934" }
+perm_exec = { fg = "#b8bb26" }
+perm_sep = { fg = "#665c54" }
 # : }}}
 
 
@@ -108,7 +113,7 @@ separator_style = { fg = "#504945" }
 
 [help]
 on      = { fg = "#fe8019" }
-exec    = { fg = "#83a598" }
+run    = { fg = "#83a598" }
 desc    = { fg = "#928374" }
 hovered = { bg = "#504945", bold = true }
 footer  = { fg = "#3c3836", bg = "#a89984" }
