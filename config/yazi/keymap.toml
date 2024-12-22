@@ -32,8 +32,8 @@ keymap = [
   { on = "<PageUp>",     run = "arrow -100%", desc = "Move cursor up one page" },
   { on = "<PageDown>",   run = "arrow 100%",  desc = "Move cursor down one page" },
 
-  { on = "h", run = "leave", desc = "Go back to the parent directory" },
-  { on = [ "l" ], run = "plugin smart-enter", desc = "Enter the child directory, or open the file" },
+  { on = "h", run = "leave",              desc = "Go back to the parent directory" },
+  { on = "l", run = "plugin smart-enter", desc = "Enter the child directory, or open the file" },
 
   { on = "H", run = "back",    desc = "Go back to the previous directory" },
   { on = "L", run = "forward", desc = "Go forward to the next directory" },
@@ -52,11 +52,11 @@ keymap = [
   { on = "G",          run = "arrow 99999999",  desc = "Move cursor to the bottom" },
 
   # Selection
-  { on = "<Space>", run = [ "select --state=none", "arrow 1" ], desc = "Toggle the current selection state" },
-  { on = "v",       run = "visual_mode",                        desc = "Enter visual mode (selection mode)" },
-  { on = "V",       run = "visual_mode --unset",                desc = "Enter visual mode (unset mode)" },
-  { on = "<C-a>",   run = "select_all --state=true",            desc = "Select all files" },
-  { on = "<C-r>",   run = "select_all --state=none",            desc = "Inverse selection of all files" },
+  { on = "<Space>", run = [ "toggle", "arrow 1" ], desc = "Toggle the current selection state" },
+  { on = "v",       run = "visual_mode",           desc = "Enter visual mode (selection mode)" },
+  { on = "V",       run = "visual_mode --unset",   desc = "Enter visual mode (unset mode)" },
+  { on = "<C-a>",   run = "toggle_all",            desc = "Select all files" },
+  { on = "<C-r>",   run = "toggle_all",            desc = "Inverse selection of all files" },
 
   # Operation
   { on = "o",         run = "open",                        desc = "Open the selected files" },
@@ -237,7 +237,7 @@ keymap = [
   { on = "<End>",  run = "move 999",  desc = "Move to the EOL" },
 
   # Delete
-  { on = "<Backspace>", run = "backspace",          desc = "Delete the character before the cursor" },
+  { on = "<Backspace>", run = "backspace",         desc = "Delete the character before the cursor" },
   { on = "<Delete>",    run = "backspace --under", desc = "Delete the character under the cursor" },
   { on = "<C-h>",       run = "backspace",         desc = "Delete the character before the cursor" },
   { on = "<C-d>",       run = "backspace --under", desc = "Delete the character under the cursor" },
