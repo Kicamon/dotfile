@@ -1,6 +1,7 @@
 xorg
-xorg-init
+xorg-xinit
 xorg-xrandr
+xclip
 yay
 rofi
 tmux

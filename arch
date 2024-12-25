@@ -34,6 +34,7 @@ echo "download nvim config"
 git clone git@github.com:Kicamon/nvim.git "$HOME"/.config/nvim
 sudo pacman -S bash-language-server \
 	clang \
+  gopls \
 	lua \
 	lua-language-server \
 	luarocks \
