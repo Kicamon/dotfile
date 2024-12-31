@@ -26,7 +26,6 @@ update_up() {
 		~/.config/qt6ct \
 		~/.config/ranger \
 		~/.config/rofi \
-		~/.config/starship.toml \
 		~/.config/tmux \
 		~/.config/vim \
 		~/.config/yazi \

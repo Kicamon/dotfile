@@ -47,11 +47,11 @@ zstyle ':completion:*:descriptions' format "[%d]"
 # user set
 
 export EDITOR=/usr/bin/nvim
-
-eval "$(starship init zsh)"
+export TERMINAL=kitty
 
 [ $(tty) = "/dev/tty1" ] && cd ~ && startx
 
+source ~/.config/zsh/theme.zsh
 source ~/.config/zsh/fzf.zsh
 source ~/.config/zsh/gd.zsh
 

@@ -31,7 +31,6 @@ chormium
 google-chrome
 mpv
 calibra
-starship
 lazygit
 fzf
 neofetch
