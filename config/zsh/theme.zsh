@@ -32,7 +32,12 @@ git_info() {
     fi
   done <<< "$git_status_output"
 
-  echo "${magenta} ${branch} [${delete}${modify}${add}]"
+
+  if [[ -z $delete && -z $modify && -z $add ]]; then
+    echo "${magenta} ${branch} "
+  else
+    echo "${magenta} ${branch} [${delete}${modify}${add}]"
+  fi
 }
 
 
