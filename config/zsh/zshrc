@@ -1,11 +1,3 @@
-# Start configuration added by Zim install {{{
-#
-# User configuration sourced by interactive shells
-#
-
-# -----------------
-# Zsh configuration
-# -----------------
 setopt HIST_IGNORE_ALL_DUPS
 bindkey -v
 WORDCHARS=${WORDCHARS//[\/]}
@@ -45,7 +37,6 @@ zstyle ':completion:complete:*:options' sort false
 zstyle ':completion:*:descriptions' format "[%d]"
 
 # user set
-
 export EDITOR=/usr/bin/nvim
 export TERMINAL=kitty
 
@@ -53,33 +44,11 @@ export TERMINAL=kitty
 
 source ~/.config/zsh/theme.zsh
 source ~/.config/zsh/fzf.zsh
-source ~/.config/zsh/gd.zsh
 
-qgit(){
-  git add .
-  git commit -m $(date "+%Y/%m/%d,%H:%M")
-  wait
-  git push
-}
-
-zip(){
-  /usr/bin/zip -q -r ${1}.zip ${1}
-}
-
-template(){
-  cp -rf $HOME/.config/nvim/template/${1}/. ./
-}
-
-trash_clear(){
-  rm -rf $HOME/.local/share/Trash/files/*
-  rm -rf $HOME/.local/share/Trash/files/.*
-  rm -rf $HOME/.local/share/Trash/info/*
-  rm -rf $HOME/.local/share/Trash/info/.*
-}
-
-tn(){
-  tmux new -n "$1" -s "$1"
-}
+mcommands="$HOME/.config/zsh/utils"
+for file in $(find "$mcommands" -type f -name "*.zsh"); do
+  source ${file}
+done
 
 _killall_processes(){
   local processes

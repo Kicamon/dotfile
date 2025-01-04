@@ -8,7 +8,7 @@ dir=$1
 if [[ -z "$dir" ]]; then
   dir=$2
 fi
-dir=$(lua $HOME/.config/zsh/quick_jump.lua $dir)
+dir=$(lua $HOME/.config/zsh/utils/quick_jump.lua $dir)
 dir=$(eval echo "$dir")
 
 # preview

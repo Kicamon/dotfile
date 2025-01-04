@@ -47,9 +47,12 @@ reveal = [
 extract = [
   { run = 'unar "$1"', orphan = true, desc = "Extract here", for = "unix" },
 ]
-play = [
+videos = [
   { run = 'mpv --geometry=1280x700 "$@"', orphan = true, for = "unix" },
   { run = '''mediainfo "$1"; echo "Press enter to exit"; read _''', block = true, desc = "Show media info", for = "unix" },
+]
+audios = [
+  { run = 'mocp "$@"', orphan = true, for = "unix" }
 ]
 image = [
   { run = 'ristretto "$@"',  desc = "ImageOpen", for = "linux" },
@@ -64,7 +67,8 @@ rules = [
 
   { mime = "text/*",          use = [ "edit", "reveal" ] },
   { mime = "image/*",         use = [ "image", "reveal" ] },
-  { mime = "{audio,video}/*", use = [ "play", "reveal" ] },
+  { mime = "video/*",         use = [ "play", "reveal" ] },
+  { mime = "audio/*",         use = [ "play", "reveal" ] },
   { mime = "inode/x-empty",   use = [ "edit", "reveal" ] },
 
   { mime = "application/zip",             use = ["extract"] },
