@@ -46,8 +46,13 @@ source ~/.config/zsh/theme.zsh
 source ~/.config/zsh/fzf.zsh
 
 mcommands="$HOME/.config/zsh/utils"
-for file in $(find "$mcommands" -type f -name "*.zsh"); do
-  source ${file}
+for file in $(find "$mcommands" -maxdepth 1 -type f); do
+  if [[ $file =~ \.zsh$ ]]; then
+    source ${file}
+  elif [[ $file =~ \.sh$ ]]; then
+    name=${file:t:r}
+    alias ${name}="bash ${file}"
+  fi
 done
 
 _killall_processes(){
@@ -59,14 +64,12 @@ _killall_processes(){
 compdef _killall_processes killall
 
 # mu alias
-alias vi='/usr/bin/vim'
 alias vim='/usr/bin/nvim'
 alias lg='lazygit'
 alias ra='yazi'
 alias c='clear'
 alias s='neofetch'
 alias sudo='sudo -E'
-alias tmuxa='tmux attach'
 alias du='dust'
 alias ls='ls --color=auto'
 alias ll='ls -l'

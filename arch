@@ -8,10 +8,11 @@ sudo pacman -S archlinuxcn-keyring archlinux-keyring
 echo "config sysmtem"
 sudo pacman -S zsh yay wget
 chsh -s $(which zsh)
-touch "$HOME"/.zshrc "$HOME"/.npmrc
+touch "$HOME"/.zshrc "$HOME"/.zshenv "$HOME"/.npmrc
 echo -e "source ~/.config/zsh/zshrc" | tee "$HOME"/.zshrc
+echo -e "source ~/.config/zsh/zshenv" | tee "$HOME"/.zshenv
 echo -e "prefix=/home/KicamonIce/.local/share/npm" | tee "$HOME"/.npmrc
-mkdir "$HOME"/.local/state/
+mkdir -p "$HOME"/.local/state/
 touch "$HOME"/.local/state/zsh_jump_list
 
 echo "download fonts"

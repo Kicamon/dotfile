@@ -5,6 +5,7 @@ local function read_jump_list()
   local file = io.open(file_path, 'r')
   if not file then
     io.close(file)
+    os.execute('touch ' .. file_path)
     return
   end
 

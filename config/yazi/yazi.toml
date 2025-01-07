@@ -58,7 +58,7 @@ image = [
   { run = 'ristretto "$@"',  desc = "ImageOpen", for = "linux" },
 ]
 pdf = [
-  { run = 'wps "$@"',  desc = "PdfRead", for = "linux" },
+  { run = 'wpspdf "$@"',  desc = "PdfRead", for = "linux" },
 ]
 
 [open]
