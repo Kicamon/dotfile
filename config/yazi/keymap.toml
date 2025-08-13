@@ -2,7 +2,7 @@
 # If you encounter any issues, please make an issue at https://github.com/yazi-rs/schemas.
 "$schema" = "https://yazi-rs.github.io/schemas/keymap.json"
 
-[manager]
+[mgr]
 
 keymap = [
   { on = "<Esc>", run = "escape",             desc = "Exit visual mode, clear selected, or cancel search" },
@@ -48,8 +48,8 @@ keymap = [
   { on = "<Left>",  run = "leave",    desc = "Go back to the parent directory" },
   { on = "<Right>", run = "enter",    desc = "Enter the child directory" },
 
-  { on = [ "g", "g" ], run = "arrow -99999999", desc = "Move cursor to the top" },
-  { on = "G",          run = "arrow 99999999",  desc = "Move cursor to the bottom" },
+  { on = [ "g", "g" ], run = "arrow top", desc = "Move cursor to the top" },
+  { on = "G",          run = "arrow bot",  desc = "Move cursor to the bottom" },
 
   # Selection
   { on = "<Space>",    run = [ "toggle", "arrow 1" ], desc = "Toggle the current selection state" },

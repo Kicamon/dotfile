@@ -5,7 +5,7 @@ prefix=${1}
 mkdir -p temp
 counter=1
 
-for file in *; do
+for file in $(find . -maxdepth 1 -type f | sort -n); do
 	if [[ -f "$file" ]]; then
 		extension="${file##*.}"
 		new_name=$(printf "${prefix}%0${num_digits}d.%s" "$counter" "$extension")

@@ -2,7 +2,7 @@
 # If you encounter any issues, please make an issue at https://github.com/yazi-rs/schemas.
 "$schema" = "https://yazi-rs.github.io/schemas/yazi.json"
 
-[manager]
+[mgr]
 ratio          = [ 2, 3, 4 ]
 sort_by        = "alphabetical"
 sort_sensitive = false
@@ -16,16 +16,18 @@ scrolloff      = 5
 mouse_events   = [ "click", "scroll" ]
 
 [preview]
-# tab_size        = 2
-# max_width       = 600
-# max_height      = 900
-# cache_dir       = ""
-# image_filter    = "triangle"
-# image_quality   = 75
-# sixel_fraction  = 15
-# ueberzug_scale  = 1
-# ueberzug_offset = [ 0, 0, 0, 0 ]
+tab_size        = 2
+max_width       = 600
+max_height      = 900
+cache_dir       = ""
+image_filter    = "triangle"
+image_quality   = 75
+sixel_fraction  = 15
+ueberzug_scale  = 1
+ueberzug_offset = [ 0, 0, 0, 0 ]
 
+[tasks]
+image_bound =[ 10000, 10000 ]
 
 [opener]
 edit = [
@@ -58,7 +60,7 @@ image = [
   { run = 'ristretto "$@"',  desc = "ImageOpen", for = "linux" },
 ]
 pdf = [
-  { run = 'wpspdf "$@"',  desc = "PdfRead", for = "linux" },
+  { run = 'okular "$@"',  desc = "PdfRead", for = "linux" },
 ]
 
 [open]
@@ -69,9 +71,9 @@ rules = [
   { mime = "image/*",         use = [ "image", "reveal" ] },
   { mime = "video/*",         use = [ "play", "reveal" ] },
   { mime = "audio/*",         use = [ "play", "reveal" ] },
-  { mime = "inode/x-empty",   use = [ "edit", "reveal" ] },
 
   { mime = "application/zip",             use = ["extract"] },
+  { mime = "application/7z",              use = ["extract"] },
   { mime = "application/rar",             use = ["extract"] },
   { mime = "application/tar.xz",          use = ["extract"] },
   { mime = "application/gzip",            use = ["extract"] },
@@ -81,10 +83,24 @@ rules = [
   { mime = "application/x-7z-compressed", use = ["extract"] },
   { mime = "application/x-rar",           use = ["extract"] },
 
-  { mime = "application/json", use = [ "edit", "reveal" ] },
-  { mime = "*/javascript",     use = [ "edit", "reveal" ] },
 
   { mime = "application/pdf",  use = [ "pdf" ] },
+
+  # code
+  { name = "*.c",     use = "edit" },
+  { name = "*.cc",    use = "edit" },
+  { name = "*.cpp",   use = "edit" },
+  { name = "*.lua",   use = "edit" },
+  { name = "*.dart",  use = "edit" },
+  { name = "*.go",    use = "edit" },
+  { name = "*.py",    use = "edit" },
+  { name = "*.sh",    use = "edit" },
+  { name = "*.zsh",   use = "edit" },
+  { name = "*.js",    use = "edit" },
+  { name = "*.ts",    use = "edit" },
+  { name = "*.css",   use = "edit" },
+  { name = "*.html",  use = "edit" },
+  { name = "*.json",  use = "edit" },
 
   { name = "*", use = [ "open", "reveal" ] },
 ]
