@@ -7,17 +7,19 @@ EnumerateForwardKeys=
 EnumerateBackwardKeys=
 # 轮换输入法时跳过第一个输入法
 EnumerateSkipFirst=False
+# 触发修饰键快捷键的时限 (毫秒)
+ModifierOnlyKeyTimeout=250
 
 [Hotkey/TriggerKeys]
-0=Shift+space
+0=Alt+space
 1=Zenkaku_Hankaku
 2=Hangul
 
 [Hotkey/AltTriggerKeys]
-0=Shift+space
+0=Alt+space
 
 [Hotkey/EnumerateGroupForwardKeys]
-0=Super+space
+0=Alt+space
 
 [Hotkey/EnumerateGroupBackwardKeys]
 0=Shift+Super+space

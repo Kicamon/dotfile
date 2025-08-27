@@ -33,6 +33,7 @@ update_up() {
 		./config
 	cp ~/.xinitrc \
 		~/.Xresources \
+		~/.xmodmap \
 		./user
 	cp -rp ~/.local/share/fcitx5 \
 		~/.local/share/fonts \
