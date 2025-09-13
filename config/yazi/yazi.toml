@@ -108,7 +108,6 @@ rules = [
 [plugin]
 
 # fetchers = [
-#   { id = "mime-ext", name = "*", run = "mime-ext", prio = "high" },
 #   { id = "git", name = "*", run = "git", prio = "normal" },
 #   { id = "git", name = "*/", run = "git", prio = "normal" },
 # ]

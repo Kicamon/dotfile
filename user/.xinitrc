@@ -10,5 +10,5 @@ export GLFW_IM_MODULE=ibus
 export DWM=/home/KicamonIce/.config/dwm
 Xcursor.theme:Breeze_Light
 xrdb -merge ~/.Xresources
-xmodmap ~/.xmodmap
+setxkbmap -model pc105 -layout us -variant custom -option custom:swapesc
 exec dwm

@@ -31,9 +31,9 @@ update_up() {
 		~/.config/yazi \
 		~/.config/zsh \
 		./config
-	cp ~/.xinitrc \
+	cp -rp ~/.xinitrc \
 		~/.Xresources \
-		~/.xmodmap \
+		~/.xkb \
 		./user
 	cp -rp ~/.local/share/fcitx5 \
 		~/.local/share/fonts \
