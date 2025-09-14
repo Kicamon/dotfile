@@ -33,7 +33,6 @@ update_up() {
 		./config
 	cp -rp ~/.xinitrc \
 		~/.Xresources \
-		~/.xkb \
 		./user
 	cp -rp ~/.local/share/fcitx5 \
 		~/.local/share/fonts \
