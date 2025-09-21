@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 echo -e "\n[archlinuxcn]\nServer = https://mirrors.ustc.edu.cn/archlinuxcn/\$arch\nServer = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/\$arch" | sudo tee -a /etc/pacman.conf
-echo -e "\n185.199.108.133 raw.githubusercontent.com\n192.30.253.112 github.com" | sudo tee -a /etc/hosts
+echo -e "\n185.199.108.133 raw.githubusercontent.com" | sudo tee -a /etc/hosts
 sudo pacman -Syu
 sudo pacman -S archlinuxcn-keyring archlinux-keyring
 
@@ -17,6 +17,7 @@ touch "$HOME"/.local/state/zsh_jump_list
 
 echo "download fonts"
 yay -Syu
+yay -Pcc
 yay -S - --noconfirm <./fontlist.txt
 
 shopt -s dotglob
@@ -50,7 +51,8 @@ sudo pacman -S bash-language-server \
 	vscode-html-languageserver \
 	vscode-json-languageserver \
 	yazi
-npm install -g live-server neovim
+npm install -g neovim
+yay -S nodejs-live-server
 
 echo "running update aur and install package"
 yay -S - --noconfirm <./pkglist.txt
