@@ -39,3 +39,4 @@ btop
 amberol
 fd
 ripgrep
+trash-cli

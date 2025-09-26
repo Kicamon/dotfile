@@ -74,3 +74,6 @@ alias du='dust'
 alias ls='ls --color=auto'
 alias ll='ls -l'
 alias mpv='mpv --geometry=1280x700'
+alias tp=trash-put
+alias tl='trash-list | grep $(pwd)'
+alias tr=trash-restore
