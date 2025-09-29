@@ -42,9 +42,6 @@ export TERMINAL=kitty
 
 [ $(tty) = "/dev/tty1" ] && cd ~ && startx
 
-source ~/.config/zsh/theme.zsh
-source ~/.config/zsh/fzf.zsh
-
 mcommands="$HOME/.config/zsh/utils"
 for file in $(find "$mcommands" -maxdepth 1 -type f); do
   if [[ $file =~ \.zsh$ ]]; then
