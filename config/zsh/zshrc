@@ -47,8 +47,7 @@ for file in $(find "$mcommands" -maxdepth 1 -type f); do
   if [[ $file =~ \.zsh$ ]]; then
     source ${file}
   elif [[ $file =~ \.sh$ ]]; then
-    name=${file:t:r}
-    alias ${name}="bash ${file}"
+    alias ${file:t:r}="bash ${file}"
   fi
 done
 
