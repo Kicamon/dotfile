@@ -40,3 +40,5 @@ amberol
 fd
 ripgrep
 trash-cli
+xss-lock
+i3lock-color-git

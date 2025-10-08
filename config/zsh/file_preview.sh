@@ -18,11 +18,10 @@ while IFS=' ' read -r keyword dir; do
 done <"$FILE_PATH"
 
 change_dir() {
-  local opt="$1"
-	if [[ -n "${jump[$opt]}" ]]; then
-		echo "${jump[$opt]}"
+	if [[ -n "${jump[\"$1\"]}" ]]; then
+		echo "${jump[\"$1\"]}"
 	else
-		echo "$opt"
+		echo "$1"
 	fi
 }
 

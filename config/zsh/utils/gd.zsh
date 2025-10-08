@@ -23,7 +23,7 @@ add_jump_list() {
 }
 
 change_dir() {
-	if [[ ! -n "$1" ]]; then
+	if [[ -z "$1" ]]; then
 		echo "~"
 	elif [[ -n "${jump[\"$1\"]}" ]]; then
 		echo "${jump[\"$1\"]}"
