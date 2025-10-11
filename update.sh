@@ -30,6 +30,7 @@ update_up() {
 		~/.config/vim \
 		~/.config/yazi \
 		~/.config/zsh \
+		~/.config/alacritty \
 		./config
 	cp -rp ~/.xinitrc \
 		~/.Xresources \

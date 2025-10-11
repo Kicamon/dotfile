@@ -2,6 +2,7 @@ xorg
 xorg-xinit
 xorg-xrandr
 xclip
+hsetroot
 yay
 rofi
 tmux
@@ -25,7 +26,6 @@ thunar-volman
 ristretto
 snipaste
 kitty
-sioyek
 yazi
 chormium
 google-chrome

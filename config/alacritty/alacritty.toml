@@ -1,0 +1,74 @@
+[font]
+size = 13
+glyph_offset = { x = 0, y = 0 }
+offset = { x = 0, y = 0 }
+
+[font.normal]
+family = "Maple Mono NF"
+style = "Regular"
+
+[font.bold]
+family = "Maple Mono NF"
+style = "Bold"
+
+[font.bold_italic]
+family = "Maple Mono"
+style = "Bold Italic"
+
+[font.italic]
+family = "Maple Mono NF"
+style = "Italic"
+
+[window]
+# opacity = 0.9
+dynamic_padding = true
+padding = {x = 2, y = 0}
+decorations = "None"
+option_as_alt = "OnlyLeft"
+
+[mouse]
+hide_when_typing = true
+
+[cursor]
+style = { shape ="Beam", blinking = "Never" }
+vi_mode_style = { shape = "Block", blinking = "Never" }
+
+[colors.primary]
+background = "#282828"
+foreground = "#ebdbb2"
+
+[colors.selection]
+text = "#928374"
+background = "#ebdbb2"
+
+[colors.normal]
+black = "#3B4252"
+red = "#BF616A"
+green = "#A3BE8C"
+yellow = "#EBCB8B"
+blue = "#81A1C1"
+magenta = "#b16286"
+cyan = "#689d6a"
+white = "#ECEFF4"
+
+[colors.bright]
+black = "#4C566A"
+red = "#BF616A"
+green = "#A3BE8C"
+yellow = "#EBCB8B"
+blue = "#81A1C1"
+magenta = "#d3869b"
+cyan = "#8ec07c"
+white = "#ECEFF4"
+
+[colors.search]
+matches.foreground = "#282828"
+matches.background = "#ebdbb2"
+focused_match.foreground = "#282828"
+focused_match.background = "#8ec07c"
+
+[colors.hints]
+start.foreground = "#282828"
+start.background = "#ebdbb2"
+end.foreground = "#282828"
+end.background = "#83a598"

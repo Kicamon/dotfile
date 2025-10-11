@@ -59,14 +59,6 @@ _killall_processes(){
 
 compdef _killall_processes killall
 
-_gd_dir_list() {
-  local gd_cmp=($(list_jump))
-	compadd "$@" -- $gd_cmp
-	_cd "$@" || compadd "$@" -- $gd_cmp
-}
-
-compdef _gd_dir_list gd
-
 # mu alias
 alias vim='/usr/bin/nvim'
 alias lg='lazygit'

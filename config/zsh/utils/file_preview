@@ -4,32 +4,11 @@ mime=$(file -bL --mime-type "$1")
 category=${mime%%/*}
 
 # ============get dir=====================
-FILE_PATH="${HOME}/.local/state/zsh_jump_list"
-declare -A jump
-if [[ ! -f "$FILE_PATH" ]]; then
-	touch "$FILE_PATH"
-	return
-fi
-
-while IFS=' ' read -r keyword dir; do
-	if [[ -n "$keyword" && -n "$dir" ]]; then
-		jump["$keyword"]="$dir"
-	fi
-done <"$FILE_PATH"
-
-change_dir() {
-	if [[ -n "${jump[\"$1\"]}" ]]; then
-		echo "${jump[\"$1\"]}"
-	else
-		echo "$1"
-	fi
-}
-
 dir=$1
 if [[ -z "$dir" ]]; then
-	dir=$2
+  dir=$2
 fi
-dir=$(change_dir "$dir")
+dir=$($HOME/.config/zsh/utils/quick_jump $dir)
 dir=$(eval echo "$dir")
 
 # =======================previe==========================

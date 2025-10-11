@@ -2,7 +2,7 @@
  *
  * Author : Aditya Shakya (adi1090x)
  * Github : @adi1090x
- * 
+ *
  * Configuration For Rofi Version: 1.7.3
  **/
 
@@ -104,7 +104,6 @@ configuration {
     }
 
   /*---------- Keybindings ----------*/
-/*
   kb-primary-paste: "Control+V,Shift+Insert";
   kb-secondary-paste: "Control+v,Insert";
   kb-clear-line: "Control+w";
@@ -125,8 +124,8 @@ configuration {
   kb-accept-custom-alt: "Control+Shift+Return";
   kb-accept-alt: "Shift+Return";
   kb-delete-entry: "Shift+Delete";
-  kb-mode-next: "Shift+Right,Control+Tab";
-  kb-mode-previous: "Shift+Left,Control+ISO_Left_Tab";
+  kb-mode-next: "Shift+Right,Alt+n";
+  kb-mode-previous: "Shift+Left,Alt+p";
   kb-mode-complete: "Control+l";
   kb-row-left: "Control+Page_Up";
   kb-row-right: "Control+Page_Down";
@@ -177,5 +176,4 @@ configuration {
   me-select-entry: "MousePrimary";
   me-accept-entry: "MouseDPrimary";
   me-accept-custom: "Control+MouseDPrimary";
-*/
 }

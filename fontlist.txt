@@ -23,9 +23,8 @@ ttf-iosevka-nerd
 ttf-joypixels
 ttf-liberation
 ttf-linux-libertine
-ttf-maple
-ttf-maple-nerd
-ttf-maple-sc-nerd
+ttf-maplemono
+ttf-maplemono-nf
 ttf-opensans
 ttf-sourcecodepro-nerd
 ttf-twemoji-color
