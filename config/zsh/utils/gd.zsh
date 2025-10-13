@@ -4,7 +4,7 @@ gd() {
 	local opt="$1"
 
 	if [[ "$opt" == "-a" ]]; then
-		${qj_path} -a $2 $(pwd)
+		${qj_path} -a $2
 	elif [[ "$opt" == "-l" ]]; then
 		${qj_path} -l
 	elif [[ "$opt" == "-e" ]]; then

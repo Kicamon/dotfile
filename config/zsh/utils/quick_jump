@@ -1,9 +1,19 @@
 #!/bin/bash
 
-HOME_DIR="$HOME"
-FILE_PATH="$HOME_DIR/.local/state/zsh_jump_list"
+FILE_PATH="$HOME/.local/state/zsh_jump_list"
 
 declare -A jump
+
+update_jump_lilst() {
+	if [[ -n "$1" && -n "$2" ]]; then
+		jump["$1"]="$2"
+	fi
+	rm "$FILE_PATH"
+	for key in ${!jump[@]}; do
+		val=${jump[$key]}
+		echo "${key} ${val}" >>"$FILE_PATH"
+	done
+}
 
 read_jump_list() {
 	if [[ ! -f "$FILE_PATH" ]]; then
@@ -11,11 +21,18 @@ read_jump_list() {
 		return
 	fi
 
+	local flag=false
+
 	while IFS=' ' read -r keyword dir; do
-		if [[ -n "$keyword" && -n "$dir" ]]; then
+		if [[ -d "$dir" ]]; then
+			flag=true
 			jump["$keyword"]="$dir"
 		fi
 	done <"$FILE_PATH"
+
+	if ${flag}; then
+		update_jump_lilst
+	fi
 }
 
 add_jump_list() {
@@ -39,10 +56,21 @@ case "$opt" in
 	done
 	;;
 "-a")
-	keyword="$2"
-	dir="$3"
-	dir="${dir/#$HOME_DIR/~}"
-	add_jump_list "$keyword" "$dir"
+	dir=$(pwd)
+	if [[ -n $2 ]]; then
+		keyword="$2"
+	else
+		keyword=$(basename "$dir")
+	fi
+	if [[ -n "${jump[$keyword]}" ]]; then
+		cover=n
+		read -p " ::${keyword}已存在，是否覆盖？[y/N]" cover
+		if [[ "$cover" == "y" ]]; then
+			update_jump_lilst $keyword $dir
+		fi
+	else
+		add_jump_list "$keyword" "$dir"
+	fi
 	;;
 *)
 	if [[ -n "${jump[$opt]}" ]]; then

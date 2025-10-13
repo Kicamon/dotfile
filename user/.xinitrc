@@ -11,4 +11,4 @@ export DWM=/home/KicamonIce/.config/dwm
 Xcursor.theme:Breeze_Light
 xrdb -merge ~/.Xresources
 exec dwm
-xset s 600
+xset s 900
