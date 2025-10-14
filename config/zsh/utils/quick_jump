@@ -48,7 +48,7 @@ opt="$1"
 
 case "$opt" in
 "")
-	echo "~"
+	echo "$HOME"
 	;;
 "-l")
 	for keyword in "${!jump[@]}"; do
@@ -60,7 +60,7 @@ case "$opt" in
 	if [[ -n $2 ]]; then
 		keyword="$2"
 	else
-		keyword=$(basename "$dir")
+		keyword=$(basename ${dir})
 	fi
 	if [[ -n "${jump[$keyword]}" ]]; then
 		cover=n
