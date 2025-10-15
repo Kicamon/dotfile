@@ -11,34 +11,45 @@ remove_file() {
 	done
 }
 
+config_path=(
+	Kvantum
+	dunst
+	fcitx5
+	fish
+	fontconfig
+	gtk-*
+	i3
+	kitty
+	neofetch
+	picom
+	polybar
+	qt6ct
+	ranger
+	rofi
+	tmux
+	vim
+	yazi
+	zsh
+	alacritty
+)
+
+local_path=(
+	fcitx5
+	fonts
+	themes
+)
+
 update_up() {
-	cp -rp ~/.config/Kvantum \
-		~/.config/dunst \
-		~/.config/fcitx5 \
-		~/.config/fish \
-		~/.config/fontconfig \
-		~/.config/gtk-* \
-		~/.config/i3 \
-		~/.config/kitty \
-		~/.config/neofetch \
-		~/.config/picom \
-		~/.config/polybar \
-		~/.config/qt6ct \
-		~/.config/ranger \
-		~/.config/rofi \
-		~/.config/tmux \
-		~/.config/vim \
-		~/.config/yazi \
-		~/.config/zsh \
-		~/.config/alacritty \
-		./config
-	cp -rp ~/.xinitrc \
-		~/.Xresources \
+	for path in ${config_path[@]}; do
+		rsync -a --delete "${HOME}/.config/${path}/" "./config/${path}/"
+	done
+	for path in ${local_path[@]}; do
+		rsync -a --delete "${HOME}/.local/share/${path}/" "./local/${path}/"
+	done
+
+	cp -rp ${HOME}/.xinitrc \
+		${HOME}/.Xresources \
 		./user
-	cp -rp ~/.local/share/fcitx5 \
-		~/.local/share/fonts \
-		~/.local/share/themes \
-		./local
 
 	shopt -s dotglob
 
@@ -49,14 +60,17 @@ update_up() {
 }
 
 update_down() {
-	cp -rf ./config/. "$HOME"/.config
-	cp -rf ./local/. "$HOME"/.local/share
+	for path in ${config_path[@]}; do
+		rsync -a --delete "./config/${path}/" "${HOME}/.config/${path}/"
+	done
+	for path in ${local_path[@]}; do
+		rsync -a --delete "./local/${path}/" "${HOME}/.local/share/${path}/"
+	done
 	cp -rf ./user/. "$HOME"/
 	echo -e "\e[31mupdate completed\e[0m"
 }
 
 case "$1" in
-up) update_up ;;
 down) update_down ;;
 *) update_up ;;
 esac
