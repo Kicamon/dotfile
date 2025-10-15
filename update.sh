@@ -1,23 +1,14 @@
 #!/usr/bin/env bash
 
-remove_file() {
-	local dir=$1
-	for file in "$dir"/*; do
-		if [[ -f "$file" && "$file" =~ \.uuid$ ]]; then
-			rm "$file"
-		elif [[ -d "$file" ]]; then
-			remove_file "$file"
-		fi
-	done
-}
-
 config_path=(
 	Kvantum
 	dunst
 	fcitx5
 	fish
 	fontconfig
-	gtk-*
+	gtk-2.0
+	gtk-3.0
+	gtk-4.0
 	i3
 	kitty
 	neofetch
@@ -54,7 +45,7 @@ update_up() {
 	shopt -s dotglob
 
 	rm -rf ./local/fcitx5/pinyin ./local/fonts/artfont
-	remove_file ./local
+  find ./local -type f -name "*.uuid" -exec rm {} +;
 
 	echo -e "\e[31mupdate completed\e[0m"
 }
