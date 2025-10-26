@@ -36,10 +36,6 @@ zstyle ':completion:*:*:*:*:processes' command "ps -u $USER -o pid,user,comm -w 
 zstyle ':completion:complete:*:options' sort false
 zstyle ':completion:*:descriptions' format "[%d]"
 
-# user set
-export EDITOR=/usr/bin/nvim
-export TERMINAL=kitty
-
 [ $(tty) = "/dev/tty1" ] && cd ~ && startx
 
 mcommands="$HOME/.config/zsh/utils"
@@ -69,7 +65,6 @@ alias sudo='sudo -E'
 alias du='dust'
 alias ls='ls --color=auto'
 alias ll='ls -l'
-alias mpv='mpv --geometry=1280x700'
-alias tp=trash-put
+alias tp='trash-put'
 alias tl='trash-list | grep $(pwd)'
-alias tr=trash-restore
+alias tr='trash-restore'

@@ -1,3 +1,3 @@
 # My Arch config
 
-Hello
+install `rsync` command to update dotfiles

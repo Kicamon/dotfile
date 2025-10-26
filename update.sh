@@ -1,63 +1,53 @@
 #!/usr/bin/env bash
 
-config_path=(
-	Kvantum
-	dunst
-	fcitx5
-	fish
-	fontconfig
-	gtk-2.0
-	gtk-3.0
-	gtk-4.0
-	i3
-	kitty
-	neofetch
-	picom
-	polybar
-	qt6ct
-	ranger
-	rofi
-	tmux
-	vim
-	yazi
-	zsh
-	alacritty
-)
+config_path=($(ls -A ./config/))
+local_path=($(ls -A ./local/))
+user_path=($(ls -A ./user/))
 
-local_path=(
-	fcitx5
-	fonts
-	themes
-)
+update() {
+	local from=$1
+	local to=$2
+	if [[ -d $from ]]; then
+		rsync -a --delete "${from}/" "${to}/"
+	else
+		cp $from $to
+	fi
+}
 
 update_up() {
 	for path in ${config_path[@]}; do
-		rsync -a --delete "${HOME}/.config/${path}/" "./config/${path}/"
+		update "${HOME}/.config/${path}" "./config/${path}" &
 	done
 	for path in ${local_path[@]}; do
-		rsync -a --delete "${HOME}/.local/share/${path}/" "./local/${path}/"
+		update "${HOME}/.local/share/${path}" "./local/${path}" &
+	done
+	for path in ${user_path[@]}; do
+		update "${HOME}/${path}" "./user/${path}" &
 	done
 
-	cp -rp ${HOME}/.xinitrc \
-		${HOME}/.Xresources \
-		./user
+	wait
 
 	shopt -s dotglob
 
 	rm -rf ./local/fcitx5/pinyin ./local/fonts/artfont
-  find ./local -type f -name "*.uuid" -exec rm {} +;
+	find ./local -type f -name "*.uuid" -exec rm {} +
 
 	echo -e "\e[31mupdate completed\e[0m"
 }
 
 update_down() {
 	for path in ${config_path[@]}; do
-		rsync -a --delete "./config/${path}/" "${HOME}/.config/${path}/"
+		update "./config/${path}" "${HOME}/.config/${path}" &
 	done
 	for path in ${local_path[@]}; do
-		rsync -a --delete "./local/${path}/" "${HOME}/.local/share/${path}/"
+		update "./local/${path}" "${HOME}/.local/share/${path}" &
 	done
-	cp -rf ./user/. "$HOME"/
+	for path in ${local_path[@]}; do
+		update "./user/${path}" "${HOME}/${path}" &
+	done
+
+	wait
+
 	echo -e "\e[31mupdate completed\e[0m"
 }
 
