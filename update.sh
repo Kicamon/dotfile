@@ -14,7 +14,7 @@ update() {
 	fi
 }
 
-update_up() {
+update_push() {
 	for path in ${config_path[@]}; do
 		update "${HOME}/.config/${path}" "./config/${path}" &
 	done
@@ -35,14 +35,14 @@ update_up() {
 	echo -e "\e[31mupdate completed\e[0m"
 }
 
-update_down() {
+update_pull() {
 	for path in ${config_path[@]}; do
 		update "./config/${path}" "${HOME}/.config/${path}" &
 	done
 	for path in ${local_path[@]}; do
 		update "./local/${path}" "${HOME}/.local/share/${path}" &
 	done
-	for path in ${local_path[@]}; do
+	for path in ${user_path[@]}; do
 		update "./user/${path}" "${HOME}/${path}" &
 	done
 
@@ -52,6 +52,7 @@ update_down() {
 }
 
 case "$1" in
-down) update_down ;;
-*) update_up ;;
+pull) update_pull ;;
+push) update_push ;;
+*) update_push ;;
 esac

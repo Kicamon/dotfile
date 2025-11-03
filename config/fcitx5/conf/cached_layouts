@@ -1270,12 +1270,12 @@ Label="ba (us)"
 
 [keyboard-tw]
 Description="键盘 - 台语"
-Language=
+Language=fox
 Label=zh
 
 [keyboard-tw-indigenous]
 Description="键盘 - 台语 - 台语（原住民）"
-Language=tay
+Language=ami
 Label="tw (indigenous)"
 
 [keyboard-tw-saisiyat]
@@ -1825,32 +1825,32 @@ Label=ar
 
 [keyboard-ma-tifinagh]
 Description="键盘 - 阿拉伯语（摩洛哥） - 柏柏尔语（摩洛哥，提非纳）"
-Language=
+Language=ber
 Label="ber (tifinagh)"
 
 [keyboard-ma-tifinagh-alt]
 Description="键盘 - 阿拉伯语（摩洛哥） - 柏柏尔语（摩洛哥，提非纳，替代）"
-Language=
+Language=ber
 Label="ber (tifinagh-alt)"
 
 [keyboard-ma-tifinagh-alt-phonetic]
 Description="键盘 - 阿拉伯语（摩洛哥） - 柏柏尔语（摩洛哥，提非纳语音助记，替代）"
-Language=
+Language=ber
 Label="ber (tifinagh-alt-phonetic)"
 
 [keyboard-ma-tifinagh-extended]
 Description="键盘 - 阿拉伯语（摩洛哥） - 柏柏尔语（摩洛哥，提非纳扩展）"
-Language=
+Language=ber
 Label="ber (tifinagh-extended)"
 
 [keyboard-ma-tifinagh-phonetic]
 Description="键盘 - 阿拉伯语（摩洛哥） - 柏柏尔语（摩洛哥，提非纳语音助记）"
-Language=
+Language=ber
 Label="ber (tifinagh-phonetic)"
 
 [keyboard-ma-tifinagh-extended-phonetic]
 Description="键盘 - 阿拉伯语（摩洛哥） - 柏柏尔语（摩洛哥，提非纳扩展语音助记）"
-Language=
+Language=ber
 Label="ber (tifinagh-extended-phonetic)"
 
 [keyboard-ma-french]
@@ -2395,52 +2395,52 @@ Label="bd (probhat)"
 
 [keyboard-ph]
 Description="键盘 - 菲律宾语"
-Language=fil
+Language=en
 Label=ph
 
 [keyboard-ph-qwerty-bay]
 Description="键盘 - 菲律宾语 - 菲律宾语（QWERTY，Baybayin）"
-Language=fil
+Language=bik
 Label="ph (qwerty-bay)"
 
 [keyboard-ph-capewell-dvorak]
 Description="键盘 - 菲律宾语 - 菲律宾语（Capewell-Dvorak，拉丁）"
-Language=fil
+Language=en
 Label="ph (capewell-dvorak)"
 
 [keyboard-ph-capewell-dvorak-bay]
 Description="键盘 - 菲律宾语 - 菲律宾语（Capewell-Dvorak，Baybayin）"
-Language=fil
+Language=bik
 Label="ph (capewell-dvorak-bay)"
 
 [keyboard-ph-capewell-qwerf2k6]
 Description="键盘 - 菲律宾语 - 菲律宾语（Capewell-QWERF 2006，拉丁）"
-Language=fil
+Language=en
 Label="ph (capewell-qwerf2k6)"
 
 [keyboard-ph-capewell-qwerf2k6-bay]
 Description="键盘 - 菲律宾语 - 菲律宾语（Capewell-QWERF 2006，Baybayin）"
-Language=fil
+Language=bik
 Label="ph (capewell-qwerf2k6-bay)"
 
 [keyboard-ph-colemak]
 Description="键盘 - 菲律宾语 - 菲律宾语（Colemak，拉丁）"
-Language=fil
+Language=en
 Label="ph (colemak)"
 
 [keyboard-ph-colemak-bay]
 Description="键盘 - 菲律宾语 - 菲律宾语（Colemak，Baybayin）"
-Language=fil
+Language=bik
 Label="ph (colemak-bay)"
 
 [keyboard-ph-dvorak]
 Description="键盘 - 菲律宾语 - 菲律宾语（Dvorak，拉丁）"
-Language=fil
+Language=en
 Label="ph (dvorak)"
 
 [keyboard-ph-dvorak-bay]
 Description="键盘 - 菲律宾语 - 菲律宾语（Dvorak，Baybayin）"
-Language=fil
+Language=bik
 Label="ph (dvorak-bay)"
 
 [keyboard-uz]
@@ -2855,7 +2855,7 @@ Label="kz (latin)"
 
 [keyboard-kz-ruskaz]
 Description="键盘 - 哈萨克语 - 俄语（哈萨克斯坦，带哈萨克语）"
-Language=ru
+Language=kk
 Label="ru (ruskaz)"
 
 [keyboard-ch]
@@ -3215,7 +3215,7 @@ Label="id (pegon-phonetic)"
 
 [keyboard-id-javanese]
 Description="键盘 - 印尼语（拉丁） - 爪哇语"
-Language=jax
+Language=id
 Label="id (javanese)"
 
 [keyboard-sn]
