@@ -309,3 +309,4 @@ keymap = [
   # Filtering
   { on = "/", run = "filter", desc = "Apply a filter for the help items" },
 ]
+

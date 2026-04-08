@@ -1,0 +1,17 @@
+[[plugin.deps]]
+use = "yazi-rs/plugins:mime-ext"
+rev = "43c6978"
+hash = "31994c9caec5bdcafd994e9b00c632a4"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:git"
+rev = "43c6978"
+hash = "26db011a778f261d730d4f5f8bf24b3f"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:full-border"
+rev = "43c6978"
+hash = "6fa6a05a81c98dd000fbca3cca6e9682"
+
+[flavor]
+deps = []

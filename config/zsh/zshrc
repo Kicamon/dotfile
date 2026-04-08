@@ -36,7 +36,7 @@ zstyle ':completion:*:*:*:*:processes' command "ps -u $USER -o pid,user,comm -w 
 zstyle ':completion:complete:*:options' sort false
 zstyle ':completion:*:descriptions' format "[%d]"
 
-[ $(tty) = "/dev/tty1" ] && cd ~ && startx
+[ $(tty) = "/dev/tty1" ] && startx
 
 mcommands="$HOME/.config/zsh/utils"
 for file in $(find "$mcommands" -maxdepth 1 -type f); do
