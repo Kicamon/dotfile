@@ -12,7 +12,6 @@ require('full-border'):setup()
 require('smart-enter'):setup({
   open_multi = true,
 })
-require('mime-preview'):setup()
 require('mime-ext.local'):setup({
   -- Expand the existing filename database (lowercase), for example:
   with_files = {

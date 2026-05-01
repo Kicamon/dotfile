@@ -8,7 +8,6 @@ export SDL_IM_MODULE=fcitx
 export INPUT_METHOD=fcitx
 export GLFW_IM_MODULE=ibus
 export DWM=/home/KicamonIce/.config/dwm
-Xcursor.theme:Breeze_Light
 xrdb -merge ~/.Xresources
 aset s 900
-exec dwm
+exec dbus-run-session dwm

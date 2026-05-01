@@ -50,6 +50,7 @@ sudo pacman -S bash-language-server \
 	vscode-css-languageserver \
 	vscode-html-languageserver \
 	vscode-json-languageserver \
+  tree-sitter-cli \
 	yazi
 npm install -g neovim
 yay -S nodejs-live-server
