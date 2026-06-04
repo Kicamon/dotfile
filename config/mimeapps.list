@@ -96,6 +96,7 @@ application/wps-office.wpt=wps-office-prometheus.desktop
 application/wps-office.wpss=wps-office-prometheus.desktop
 application/wps-office.wpso=wps-office-prometheus.desktop
 application/wps-office.pdf=wps-office-prometheus.desktop
+application/epub+zip=calibre.desktop
 x-scheme-handler/baiduyunguanjia=baidunetdisk.desktop
 image/apng=org.xfce.ristretto.desktop
 image/astc=org.xfce.ristretto.desktop
