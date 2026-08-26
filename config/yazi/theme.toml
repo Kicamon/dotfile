@@ -216,4 +216,11 @@ rules = [
   { url = "*/", fg = "#83a598" },
 ]
 
-# : }}}
+[git]
+unknown_sign = ' '
+untracked_sign = '?'
+unstaged_sign = 'M'
+deleted_sign = 'D'
+added_sign = '+'
+clean_sign = '✓'
+ignored_sign = '.'

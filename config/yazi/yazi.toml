@@ -1,7 +1,3 @@
-# A TOML linter such as https://taplo.tamasfe.dev/ can use this schema to validate your config.
-# If you encounter any issues, please make an issue at https://github.com/yazi-rs/schemas.
-"$schema" = "https://yazi-rs.github.io/schemas/yazi.json"
-
 [mgr]
 ratio          = [ 2, 3, 4 ]
 sort_by        = "alphabetical"
@@ -31,10 +27,10 @@ image_bound =[ 10000, 10000 ]
 
 [opener]
 edit = [
-  { run = '${EDITOR:=nvim} "$@"', desc = "$EDITOR", block = true, for = "unix" },
+  { run = '${EDITOR:=nvim} %s', desc = "$EDITOR", block = true, for = "unix" },
 ]
 open = [
-  { run = 'xdg-open "$@"',                desc = "Open", for = "linux" },
+  { run = 'xdg-open %s',                desc = "Open", for = "linux" },
 ]
 reveal = [
   { run = 'xdg-open "$(dirname "$0")"',            desc = "Reveal", for = "linux" },
@@ -43,14 +39,14 @@ extract = [
   { run = 'unar "$1"', orphan = true, desc = "Extract here", for = "unix" },
 ]
 videos = [
-  { run = 'mpv --geometry=1280x700 "$@"', orphan = true, for = "unix" },
+  { run = 'mpv --geometry=1280x700 %s', orphan = true, for = "unix" },
   { run = '''mediainfo "$1"; echo "Press enter to exit"; read _''', block = true, desc = "Show media info", for = "unix" },
 ]
 audios = [
-  { run = 'amberol "$@"', orphan = true, for = "unix" }
+  { run = 'amberol %s', orphan = true, for = "unix" }
 ]
 image = [
-  { run = 'ristretto "$@"',  desc = "ImageOpen", for = "linux" },
+  { run = 'ristretto %s',  desc = "ImageOpen", for = "linux" },
 ]
 
 [open]
@@ -79,8 +75,8 @@ rules = [
 
 [plugin]
 prepend_fetchers=[
-  { id  = "git", url = "*", run = "git" },
-  { id  = "git", url = "*/", run = "git" },
-  { id   = "mime", url  = "local://*", run  = "mime-ext.local", prio = "high" },
-  { id   = "mime", url  = "remote://*", run  = "mime-ext.remote", prio = "high" },
+  { group = "git", url = "*", run = "git" },
+  { group = "git", url = "*/", run = "git" },
+  { group = "mime", url = "local://*", run = "mime-ext.local", prio = "high" },
+  { group = "mime", url = "remote://*", run = "mime-ext.remote", prio = "high" },
 ]

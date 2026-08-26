@@ -1,17 +1,17 @@
 [[plugin.deps]]
 use = "yazi-rs/plugins:mime-ext"
-rev = "43c6978"
-hash = "31994c9caec5bdcafd994e9b00c632a4"
+rev = "044c3cc"
+hash = "3bcc00df11efc3ae5d15f2dba860be7"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:git"
-rev = "43c6978"
-hash = "26db011a778f261d730d4f5f8bf24b3f"
+rev = "044c3cc"
+hash = "5bb0bfab901d3601c370eafdd66edd31"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:full-border"
-rev = "43c6978"
-hash = "6fa6a05a81c98dd000fbca3cca6e9682"
+rev = "044c3cc"
+hash = "f281261ff04ad7ec867c3f802a50835f"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:compress"
