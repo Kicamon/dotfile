@@ -7,3 +7,4 @@ export XDG_STATE_HOME="$HOME/.local/state"
 export EDITOR=/usr/bin/nvim
 export TERMINAL=kitty
 export WEBKIT_DISABLE_COMPOSITING_MODE=1
+export PATH="$HOME/.local/share/npm/bin:$PATH"
