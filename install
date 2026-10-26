@@ -52,8 +52,7 @@ sudo pacman -S bash-language-server \
 	vscode-json-languageserver \
   tree-sitter-cli \
 	yazi
-npm install -g neovim
-yay -S nodejs-live-server
+npm install -g neovim live-server
 
 echo "running update aur and install package"
 yay -S - --noconfirm <./pkglist.txt
